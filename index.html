@@ -315,22 +315,23 @@
       padding: 40px 0 18px 0;
       text-align: center;
     }
-    .contact-section h2 {
-      color: #2196f3;
-      font-size: 25px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-    .contact-form {
-      display: inline-block;
-      background: #fff;
-      padding: 24px 18px;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px #2196f111;
-      max-width: 340px;
-      width: 100%;
-      text-align: left;
-    }
+    .contact-section {
+  background: #f8fafc;
+  padding: 40px 0 18px 0;
+  text-align: center;
+}
+
+.contact-form {
+  display: inline-block;
+  background: #fff;
+  padding: 24px 18px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px #2196f111;
+  max-width: 340px;
+  width: 100%;
+  text-align: left;
+  margin: 0 auto; /* هذا يجعل النموذج في الوسط */
+}
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -559,16 +560,16 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact-section" id="contact">
-    <div style="color:#2196f3; font-weight:bold; font-size:20px; margin-bottom:7px;">Need Help?</div>
-    <a href="#" id="showContactForm" style="color:#2196f3; font-size:25px; font-weight:700; text-decoration:underline; cursor:pointer;">Contact Us</a>
-    <form class="contact-form" id="contactForm" style="display:none;">
-  <input type="text" placeholder="Your Name" required>
-  <input type="email" placeholder="Your Email" required>
-  <textarea placeholder="Your Message" rows="4" required></textarea>
-  <button type="submit">Send Message</button>
-</form>
-  </section>
+<section class="contact-section" id="contact">
+  <div style="color:#2196f3; font-weight:bold; font-size:20px; margin-bottom:7px; text-align:center;">Need Help?</div>
+  <a href="#" id="showContactForm" style="color:#2196f3; font-size:25px; font-weight:700; text-decoration:underline; cursor:pointer; display:block; text-align:center;">Contact Us</a>
+  <form class="contact-form" id="contactForm" style="display:none;">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
   <!-- FOOTER -->
   <footer>
