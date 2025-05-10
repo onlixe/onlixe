@@ -561,13 +561,13 @@
   <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div style="color:#2196f3; font-weight:bold; font-size:20px; margin-bottom:7px;">Need Help?</div>
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <a href="#" id="showContactForm" style="color:#2196f3; font-size:25px; font-weight:700; text-decoration:underline; cursor:pointer;">Contact Us</a>
+    <form class="contact-form" id="contactForm" style="display:none;">
+  <input type="text" placeholder="Your Name" required>
+  <input type="email" placeholder="Your Email" required>
+  <textarea placeholder="Your Message" rows="4" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
   </section>
 
   <!-- FOOTER -->
@@ -598,6 +598,14 @@ document.addEventListener('click', function(event) {
     menu.style.display = 'none';
   }
 });
+</script>
+
+  <script>
+  document.getElementById('showContactForm').onclick = function(e) {
+    e.preventDefault();
+    document.getElementById('contactForm').style.display = 'block';
+    this.style.display = 'none';
+  };
 </script>
   
 </body>
