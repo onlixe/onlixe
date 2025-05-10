@@ -7,6 +7,13 @@
   <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+
+    *,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+    
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -422,44 +429,43 @@
 .games-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 12px;
   justify-content: center;
   margin: 0 auto;
   padding: 0;
 }
 
-/* الوضع الافتراضي للكمبيوتر */
 .game-card {
-  width: 210px;
+  width: 180px;
+  max-width: 44vw;
+  min-width: 120px;
   background: #fff;
   border-radius: 13px;
   box-shadow: 0 2px 16px #2196f111;
-  padding: 16px;
+  padding: 13px 8px;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   transition: box-shadow 0.2s;
 }
 
-/* شاشات متوسطة: بطاقتين في الصف */
 @media (max-width: 700px) {
   .game-card {
-    width: 46vw;
-    min-width: 140px;
-    max-width: 180px;
-    padding: 12px 5px;
+    width: 45vw;
+    max-width: 175px;
+    min-width: 110px;
+    padding: 10px 4px;
   }
 }
 
-/* شاشات صغيرة جدًا: بطاقة واحدة في الصف */
 @media (max-width: 450px) {
   .games-list {
     gap: 8px;
   }
   .game-card {
-    width: 96vw !important;
-    max-width: 340px;
-    min-width: 120px;
-    padding: 9px 2px;
+    width: 98vw;
+    max-width: 320px;
+    min-width: 90vw;
+    padding: 8px 3px;
   }
 }
 .game-card img {
