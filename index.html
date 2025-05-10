@@ -3,113 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ModXnet - MOD Games</title>
+  <title>ModXnet - Download Free MOD Games</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      background-color: #0d1b2a;
+      color: white;
       text-align: center;
     }
-
     header {
-      padding: 60px 20px 30px;
+      background-color: #1b263b;
+      padding: 2rem;
     }
-
-    header h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+    h1 {
+      color: white;
+      margin-bottom: 0.5rem;
     }
-
-    header p {
-      font-size: 18px;
-      margin-bottom: 30px;
+    p {
+      color: #ccc;
+      font-size: 1rem;
     }
-
-    .download-btn {
-      background-color: #2196f3;
-      color: #fff;
-      border: none;
-      padding: 12px 25px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #0077b6;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+      margin-top: 1rem;
     }
-
-    .download-btn:hover {
-      background-color: #1976d2;
-    }
-
     .section-title {
-      margin-top: 60px;
-      font-size: 28px;
-      color: #00e5ff;
+      font-size: 2rem;
+      margin: 2rem 0 1rem;
+      color: #00d4ff;
     }
-
-    .games-grid {
+    .games {
       display: flex;
-      justify-content: center;
-      gap: 20px;
       flex-wrap: wrap;
-      padding: 40px 20px;
+      justify-content: center;
+      padding: 2rem;
+      gap: 1.5rem;
     }
-
     .game-card {
-      background-color: #1c1c1c;
+      background-color: #1e2a3a;
+      padding: 1rem;
       border-radius: 10px;
-      width: 240px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      width: 200px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
     }
-
     .game-card img {
       width: 100%;
       border-radius: 8px;
-      margin-bottom: 10px;
     }
-
-    .game-card h3 {
-      margin: 10px 0 5px;
+    .game-title {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
     }
-
-    .game-card p {
-      color: #ccc;
-      font-size: 14px;
+    .game-desc {
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Download Free MOD Games</h1>
     <p>ModXnet is the #1 source to download modded Android and iOS games.</p>
-    <button class="download-btn" onclick="alert('Starting download...')">Download Now</button>
+    <a href="#" class="btn">Download Now</a>
   </header>
 
-  <h2 class="section-title">Featured Games</h2>
-  <div class="games-grid">
+  <h2 class="section-title" id="featured-games">Featured Games</h2>
+  <section class="games">
     <div class="game-card">
-      <img src="https://www.modxnet.com/images/beamng.jpg" alt="BeamNG Drive">
-      <h3>Game 1 - BeamNG Drive</h3>
-      <p>BeamNG.drive Mobile</p>
+      <img src="https://www.modxnet.com/assets/img/game1.webp" alt="Game 1" />
+      <div class="game-title">BeamNG Drive</div>
+      <div class="game-desc">BeamNG.drive Mobile</div>
     </div>
-
     <div class="game-card">
-      <img src="https://www.modxnet.com/images/gta.jpg" alt="GTA V">
-      <h3>Game 2 - GTA V</h3>
-      <p>GTA V Mobile</p>
+      <img src="https://www.modxnet.com/assets/img/game2.webp" alt="Game 2" />
+      <div class="game-title">GTA V</div>
+      <div class="game-desc">GTA V Mobile</div>
     </div>
-
     <div class="game-card">
-      <img src="https://www.modxnet.com/images/fortnite.jpg" alt="Fortnite">
-      <h3>Game 3 - Fortnite</h3>
-      <p>Fortnite Mobile</p>
+      <img src="https://www.modxnet.com/assets/img/game3.webp" alt="Game 3" />
+      <div class="game-title">Fortnite</div>
+      <div class="game-desc">Fortnite Mobile</div>
     </div>
-  </div>
-
+  </section>
 </body>
 </html>
+
 
 
 
