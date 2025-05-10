@@ -422,10 +422,13 @@
 .games-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 16px;
   justify-content: center;
+  margin: 0 auto;
+  padding: 0;
 }
 
+/* الوضع الافتراضي للكمبيوتر */
 .game-card {
   width: 210px;
   background: #fff;
@@ -437,25 +440,26 @@
   transition: box-shadow 0.2s;
 }
 
-/* الشاشات المتوسطة - صفين */
+/* شاشات متوسطة: بطاقتين في الصف */
 @media (max-width: 700px) {
   .game-card {
-    width: 44vw;   /* بطاقتين في الصف */
+    width: 46vw;
+    min-width: 140px;
+    max-width: 180px;
     padding: 12px 5px;
-  }
-  .games-list {
-    gap: 10px;
   }
 }
 
-/* الشاشات الصغيرة جدًا - صف واحد */
-@media (max-width: 430px) {
-  .game-card {
-    width: 92vw;   /* بطاقة واحدة في الصف */
-    padding: 10px 2px;
-  }
+/* شاشات صغيرة جدًا: بطاقة واحدة في الصف */
+@media (max-width: 450px) {
   .games-list {
-    gap: 7px;
+    gap: 8px;
+  }
+  .game-card {
+    width: 96vw !important;
+    max-width: 340px;
+    min-width: 120px;
+    padding: 9px 2px;
   }
 }
 .game-card img {
