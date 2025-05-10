@@ -94,36 +94,32 @@
       font-weight: bold;
     }
 
-    .games-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-      gap: 20px;
-    }
+   .games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
 
-    .game-card {
-      background-color: #2c3e50;
-      padding: 20px;
-      border-radius: 10px;
-      width: 260px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
+.game-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
 
-    .game-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
+.game-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-    .game-card h3 {
-      font-size: 18px;
-      margin: 10px 0 5px;
-    }
+.game-card h4 {
+  color: #00e0ff;
+  padding: 10px;
+}
 
-    .game-card p {
-      font-size: 14px;
-      color: #ccc;
-    }
 
 /* حاوية القسم */
 .how-it-works {
