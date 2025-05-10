@@ -1,61 +1,193 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Featured Games</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ModXnet - Download Free MOD Games</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a;
+      color: #fff;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: white;
+      padding: 0;
     }
-    header {
-      background: #000;
-      padding: 1rem;
+    .navbar {
+      background-color: #1e293b;
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+    }
+    .hero {
+      background-color: #1e293b;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #94a3b8;
+    }
+    .btn-primary {
+      background-color: #3b82f6;
+      border: none;
+      padding: 10px 30px;
+      font-weight: bold;
+    }
+    .section-title {
+      margin: 60px 0 30px;
       text-align: center;
       font-size: 2rem;
-      color: #0ff;
+      font-weight: bold;
     }
-    .games {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 1rem;
-    }
-    .game {
-      background: #222;
-      margin: 1rem;
-      padding: 1rem;
+    .game-card {
+      background-color: #1e293b;
       border-radius: 8px;
-      width: 300px;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+      transition: transform 0.3s;
     }
-    .game img {
+    .game-card:hover {
+      transform: translateY(-5px);
+    }
+    .game-card img {
       width: 100%;
       border-radius: 5px;
     }
-    .game h3 {
-      color: #0ff;
+    .game-card h5 {
+      margin-top: 15px;
+      font-size: 1.2rem;
+    }
+    .game-card p {
+      color: #94a3b8;
+    }
+    .btn-outline-light {
+      border-color: #94a3b8;
+      color: #94a3b8;
+    }
+    .btn-outline-light:hover {
+      background-color: #3b82f6;
+      color: white;
+    }
+    .how-it-works {
+      background-color: #0f172a;
+      padding: 60px 0;
+    }
+    .how-it-works .step {
+      text-align: center;
+      padding: 20px;
+    }
+    .how-it-works .step i {
+      font-size: 2rem;
+      color: #3b82f6;
+      margin-bottom: 10px;
+    }
+    footer {
+      background-color: #1e293b;
+      color: #94a3b8;
+      padding: 40px 0;
+    }
+    footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: white;
     }
   </style>
 </head>
 <body>
-  <header>Featured Games</header>
-  <section class="games">
-    <div class="game">
-      <img src="https://via.placeholder.com/300x150.png?text=Game+1" alt="Game 1">
-      <h3>Game Title 1</h3>
-      <p>Short description of the game.</p>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">ModXnet</a>
     </div>
-    <div class="game">
-      <img src="https://via.placeholder.com/300x150.png?text=Game+2" alt="Game 2">
-      <h3>Game Title 2</h3>
-      <p>Short description of the game.</p>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Download Free MOD Games</h1>
+      <p>ModXnet is the #1 source to download modded Android and iOS games.</p>
+      <a href="#featured-games" class="btn btn-primary mt-3">Download Now</a>
     </div>
   </section>
+
+  <!-- Featured Games -->
+  <section id="featured-games" class="container">
+    <h2 class="section-title text-white">Featured Games</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="game-card">
+          <img src="https://www.modxnet.com/wp-content/uploads/2024/05/beamng.jpg" alt="BeamNG Drive">
+          <h5>BeamNG.drive Mobile</h5>
+          <p>Version 0.32.0.0</p>
+          <a href="#" class="btn btn-outline-light">Download</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="game-card">
+          <img src="https://www.modxnet.com/wp-content/uploads/2024/05/gta5.jpg" alt="GTA V">
+          <h5>GTA V Mobile</h5>
+          <p>Version 1.0.3095</p>
+          <a href="#" class="btn btn-outline-light">Download</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="game-card">
+          <img src="https://www.modxnet.com/wp-content/uploads/2024/05/fortnite.jpg" alt="Fortnite">
+          <h5>Fortnite Mobile</h5>
+          <p>Version 29.10.0</p>
+          <a href="#" class="btn btn-outline-light">Download</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="how-it-works">
+    <div class="container">
+      <h2 class="section-title text-white">How It Works</h2>
+      <div class="row">
+        <div class="col-md-3 step">
+          <i class="bi bi-search"></i>
+          <h5>1. Search Your Game</h5>
+          <p>Find your desired modded game on our website.</p>
+        </div>
+        <div class="col-md-3 step">
+          <i class="bi bi-check-circle"></i>
+          <h5>2. Complete Offer</h5>
+          <p>Finish a quick offer to unlock the download link.</p>
+        </div>
+        <div class="col-md-3 step">
+          <i class="bi bi-download"></i>
+          <h5>3. Download Game</h5>
+          <p>Get access to the game and install it easily.</p>
+        </div>
+        <div class="col-md-3 step">
+          <i class="bi bi-emoji-smile"></i>
+          <h5>4. Enjoy Features</h5>
+          <p>Enjoy premium unlocked features & mods!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p>© 2025 ModXnet. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap + Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </body>
 </html>
+
