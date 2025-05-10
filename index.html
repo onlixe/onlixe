@@ -1,4 +1,4 @@
-<!-- سكريبت Onlixe Games - نسخة محسّنة -->
+<!-- سكريبت Onlixe Games مع عرض الألعاب داخل الصفحة -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,6 +90,7 @@
       color: #00e5ff;
       text-decoration: none;
       font-weight: bold;
+      cursor: pointer;
     }
 
     .games-grid {
@@ -135,6 +136,10 @@
       color: gold;
       font-size: 14px;
       margin-top: 5px;
+    }
+
+    .hidden {
+      display: none;
     }
 
     .how-it-works {
@@ -254,10 +259,6 @@
       cursor: pointer;
     }
 
-    .hidden {
-      display: none;
-    }
-
     footer {
       background-color: #0a0a0a;
       padding: 30px 20px;
@@ -300,58 +301,53 @@
   </div>
 
   <h2 class="section-title">Featured Games</h2>
-  <button class="btn" onclick="showGames()">View All Games</button>
-
 
   <div class="games-grid">
-    <!-- الألعاب الأصلية + إضافات -->
+    <!-- الألعاب الرئيسية -->
     <div class="game-card">
-      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="BeamNG.drive Mobile">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png">
       <h3>BeamNG.drive Mobile</h3>
       <div class="version">v0.32.0.0</div>
       <div class="stars">★★★★★ 4.6</div>
     </div>
     <div class="game-card">
-      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="GTA V">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png">
       <h3>Grand Theft Auto V</h3>
-      <div class="version">v1.0.3095/1.68</div>
+      <div class="version">v1.0.3095</div>
       <div class="stars">★★★★★ 4.9</div>
     </div>
     <div class="game-card">
-      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Assetto Corsa">
-      <h3>Assetto Corsa Mobile</h3>
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png">
+      <h3>Assetto Corsa</h3>
       <div class="version">v1.16.4</div>
       <div class="stars">★★★★★ 4.8</div>
     </div>
+  </div>
+
+  <!-- زر عرض المزيد -->
+  <div class="view-all">
+    <a href="#" onclick="toggleMoreGames(event)">View All Games</a>
+  </div>
+
+  <!-- قسم الألعاب الإضافية -->
+  <div id="moreGames" class="games-grid hidden">
     <div class="game-card">
-      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Forza Horizon 5">
-      <h3>Forza Horizon 5 Mobile</h3>
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png">
+      <h3>Forza Horizon 5</h3>
       <div class="version">v1.656.386.0</div>
       <div class="stars">★★★★★ 5.0</div>
     </div>
-    <!-- ألعاب إضافية -->
     <div class="game-card">
-      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Minecraft PE">
-      <h3>Minecraft Pocket Edition</h3>
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png">
+      <h3>Minecraft PE</h3>
       <div class="version">v1.20.41</div>
       <div class="stars">★★★★★ 4.7</div>
-    </div>
-    <div class="game-card">
-      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="PUBG Mobile MOD">
-      <h3>PUBG Mobile MOD</h3>
-      <div class="version">v3.1.0</div>
-      <div class="stars">★★★★★ 4.5</div>
     </div>
   </div>
 
   <section class="how-it-works" id="how-it-works">
     <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step"><div class="icon">🔍</div><h3>Find Your Game</h3><p>Browse or search any game you want.</p></div>
-      <div class="step"><div class="icon">⬇️</div><h3>Complete Offer</h3><p>Quick step to unlock your download.</p></div>
-      <div class="step"><div class="icon">📱</div><h3>Download & Install</h3><p>Install the game easily.</p></div>
-      <div class="step"><div class="icon">🎮</div><h3>Enjoy Premium</h3><p>No ads, unlimited features.</p></div>
-    </div>
+    <!-- المحتوى الخاص بك -->
   </section>
 
   <button class="contact-button" onclick="toggleContact()">Contact Us</button>
@@ -359,12 +355,12 @@
   <div id="contact-overlay" class="overlay hidden">
     <div class="contact-popup">
       <h2>Send us a message</h2>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="How can we help you?" required></textarea>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your message"></textarea>
       <div class="g-recaptcha" data-sitekey="6LdzujQrAAAAAD-JzRKARd4sm4-lfY0LDpp85d_a"></div>
       <button type="button" onclick="submitContactForm()">Send Message</button>
-      <button onclick="toggleContact()" class="close-btn">×</button>
+      <button class="close-btn" onclick="toggleContact()">×</button>
     </div>
   </div>
 
@@ -374,28 +370,12 @@
       <a href="#">Home</a> |
       <a href="#">Games</a> |
       <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Use</a> |
-      <a href="#">About Us</a> |
+      <a href="#">Terms</a> |
       <a href="#" onclick="toggleContact()">Contact</a>
     </p>
   </footer>
 
-  <!-- زر عرض الألعاب -->
-<button onclick="showGames()">View All Games</button>
-
-<!-- قسم الألعاب مخفي بالبداية -->
-<div id="gamesSection" style="display: none; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; padding: 20px;">
-  <div style="background: #1e1e1e; border-radius: 12px; padding: 15px; text-align: center;">
-    <img src="https://your-image-url.com/nfs.jpg" style="width: 100%; border-radius: 10px;">
-    <h3 style="color: white;">Need For Speed Mobile</h3>
-    <p style="color: #ffc107;">★★★★★</p>
-    <a href="link-to-download" style="display: inline-block; background: #00ffcc; color: black; padding: 8px 16px; border-radius: 8px; font-weight: bold; text-decoration: none;">Download</a>
-  </div>
-
-  <!-- أضف المزيد من الألعاب هنا بنفس الشكل -->
-</div>
-
-
+  <!-- السكريبتات -->
   <script>
     function toggleContact() {
       document.getElementById('contact-overlay').classList.toggle('hidden');
@@ -409,15 +389,15 @@
       alert("تم إرسال رسالتك بنجاح!");
       toggleContact();
     }
-  </script>
-  
-  <script>
-  function showGames() {
-    document.getElementById('gamesSection').style.display = 'grid';
-  }
-</script>
 
+    function toggleMoreGames(event) {
+      event.preventDefault();
+      const moreGames = document.getElementById('moreGames');
+      moreGames.classList.toggle('hidden');
+    }
+  </script>
 
 </body>
 </html>
+
 
