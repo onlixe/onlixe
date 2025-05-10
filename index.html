@@ -126,42 +126,51 @@
     }
 
     .how-it-works {
-      padding: 40px 20px;
-    }
+  padding: 40px 20px;
+}
 
-    .how-it-works h2 {
-      text-align: center;
-      font-size: 28px;
-      color: #ffffff;
-      margin-bottom: 30px;
-    }
+.how-it-works h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
 
-    .how-it-works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.how-it-works-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    .how-box {
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      padding: 20px;
-      text-align: center;
-    }
+@media (min-width: 768px) {
+  .how-it-works-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 
-    .how-box div.icon {
-      font-size: 28px;
-      color: #00e676;
-    }
+.how-box {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
 
-    .how-box h3 {
-      color: white;
-      margin: 10px 0;
-    }
+.how-box .icon {
+  font-size: 28px;
+  color: #00e676;
+}
 
-    .how-box p {
-      color: #aaa;
-    }
+.how-box h3 {
+  color: white;
+  margin: 10px 0;
+}
+
+.how-box p {
+  color: #aaa;
+}
+
 
     .contact-form,
     .subscribe {
@@ -260,31 +269,31 @@
   </div>
 
   <!-- NEW HOW IT WORKS SECTION -->
-  <section id="how-it-works" class="how-it-works">
-    <h2>How It Works</h2>
-    <div class="how-it-works-grid">
-      <div class="how-box">
-        <div class="icon">&#128269;</div>
-        <h3>Find Your Game</h3>
-        <p>Browse our collection of modded games or search for what you want.</p>
-      </div>
-      <div class="how-box">
-        <div class="icon">&#128229;</div>
-        <h3>Complete Offer</h3>
-        <p>Complete a quick offer (less than 1 minute) to unlock the download.</p>
-      </div>
-      <div class="how-box">
-        <div class="icon">&#128241;</div>
-        <h3>Download & Install</h3>
-        <p>Get your download link and install the game with our instructions.</p>
-      </div>
-      <div class="how-box">
-        <div class="icon">&#127918;</div>
-        <h3>Enjoy Premium</h3>
-        <p>Play with all premium features unlocked – unlimited money, no ads!</p>
-      </div>
+ <section id="how-it-works" class="how-it-works">
+  <h2>How It Works</h2>
+  <div class="how-it-works-grid">
+    <div class="how-box">
+      <div class="icon">&#128269;</div>
+      <h3>Find Your Game</h3>
+      <p>Browse our collection of modded games or search for what you want.</p>
     </div>
-  </section>
+    <div class="how-box">
+      <div class="icon">&#128229;</div>
+      <h3>Complete Offer</h3>
+      <p>Complete a quick offer (less than 1 minute) to unlock the download.</p>
+    </div>
+    <div class="how-box">
+      <div class="icon">&#128241;</div>
+      <h3>Download & Install</h3>
+      <p>Get your download link and install the game with our instructions.</p>
+    </div>
+    <div class="how-box">
+      <div class="icon">&#127918;</div>
+      <h3>Enjoy Premium</h3>
+      <p>Play with all premium features unlocked – unlimited money, no ads!</p>
+    </div>
+  </div>
+</section>
 
   <section class="contact-form">
     <h2>Contact Us</h2>
