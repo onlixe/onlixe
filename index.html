@@ -13,46 +13,89 @@
       background: #f9fbfd;
       color: #232a34;
     }
-    .navbar {
-      background: #fff;
-      border-bottom: 1px solid #e0e3ea;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 32px;
-      position: sticky;
-      top: 0;
-      z-index: 99;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo img {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
-    }
-    .logo span {
-      font-size: 22px;
-      font-weight: 700;
-      color: #2196f3;
-      letter-spacing: 1px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 18px;
-    }
-    .nav-links a {
-      color: #232a34;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      transition: color 0.2s;
-      padding: 6px 12px;
-      border-radius: 5px;
-    }
+   .navbar {
+  background: #fff;
+  border-bottom: 1px solid #e0e3ea;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo img {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+}
+.logo span {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2196f3;
+  letter-spacing: 1px;
+}
+.burger {
+  font-size: 28px;
+  color: #2196f3;
+  padding: 7px 14px;
+  border: none;
+  background: none;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s;
+  cursor: pointer;
+  margin-left: 10px;
+  display: block;
+}
+.burger:hover {
+  background: #e3f2fd;
+}
+.burger-menu {
+  display: none;
+  position: absolute;
+  top: 58px;
+  right: 32px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px #2196f245;
+  min-width: 170px;
+  z-index: 1000;
+  flex-direction: column;
+  padding: 10px 0;
+  animation: fadeIn 0.2s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.burger-menu a {
+  display: block;
+  color: #232a34;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  border-bottom: 1px solid #f1f4f8;
+  transition: background 0.18s;
+}
+.burger-menu a:last-child {
+  border-bottom: none;
+}
+.burger-menu a:hover {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+/* إخفاء أي روابط علوية أو زر قديم */
+.nav-links,
+.header-cta {
+  display: none !important;
+}
     .nav-links a:hover {
       background: #e3f2fd;
       color: #1976d2;
@@ -402,18 +445,18 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="logo">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
-      <span>Onlixe Games</span>
-    </div>
-    <div class="nav-links">
-      <a href="#games">Games</a>
-      <a href="#features">Features</a>
-      <a href="#how">How it works</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a class="header-cta" href="#contact">Get Started</a>
-  </nav>
+  <div class="logo">
+    <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
+    <span>Onlixe Games</span>
+  </div>
+  <button class="burger" onclick="toggleMenu(event)">&#9776;</button>
+  <div class="burger-menu" id="burgerMenu">
+    <a href="#games">Games</a>
+    <a href="#features">Features</a>
+    <a href="#how">How it works</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
   <!-- HERO -->
   <section class="hero-section">
@@ -534,5 +577,27 @@
     <a href="#how">How it works</a>
     <a href="#contact">Contact</a>
   </footer>
+  
+  <script>
+function toggleMenu(e) {
+  e.preventDefault();
+  var menu = document.getElementById('burgerMenu');
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+// إغلاق القائمة عند الضغط خارجها
+document.addEventListener('click', function(event) {
+  var menu = document.getElementById('burgerMenu');
+  var burger = document.querySelector('.burger');
+  if (
+    menu &&
+    menu.style.display === 'block' &&
+    !menu.contains(event.target) &&
+    !burger.contains(event.target)
+  ) {
+    menu.style.display = 'none';
+  }
+});
+</script>
+  
 </body>
 </html>
