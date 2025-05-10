@@ -663,6 +663,16 @@ document.addEventListener('click', function(event) {
     this.style.display = 'none';
   };
 </script>
+
+  <script>
+function searchGames(e) {
+  e.preventDefault();
+  var searchValue = document.getElementById('gameSearchInput').value.trim();
+  if(searchValue) {
+    alert('Searching for: ' + searchValue); // لاحقًا يمكنك استبدال هذا بفلترة فعلية للألعاب
+  }
+}
+</script>
   
 </body>
 </html>
