@@ -404,7 +404,7 @@
     <input type="text" placeholder="Your Name" required>
     <input type="email" placeholder="Your Email" required>
     <textarea placeholder="How can we help you?" required></textarea>
-    <button type="submit">Send Message</button>
+    <button type="button" onclick="submitContactForm()">Send Message</button>
     <button onclick="toggleContact()" class="close-btn">×</button>
   </div>
 </div>
@@ -432,6 +432,11 @@
     const overlay = document.getElementById('contact-overlay');
     overlay.classList.toggle('hidden');
   }
+    function submitContactForm() {
+  alert("تم إرسال رسالتك بنجاح!");
+  toggleContact(); // لإغلاق النافذة
+}
+    
 </script>
 
 
