@@ -6,71 +6,374 @@
   <title>Onlixe Games - MOD Games Hub</title>
   <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
-    /* ... [جميع أنماط CSS السابقة تبقى كما هي] ... */
-
-    /* زر العودة إلى الأعلى */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #00e5ff;
-      color: #000;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      z-index: 1000;
-      font-size: 18px;
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+      color: #ffffff;
     }
 
-    #backToTop:hover {
-      background-color: #00bcd4;
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #0d1b2a;
+      border-bottom: 1px solid #1b263b;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
-    /* رسائل الخطأ في نموذج الاتصال */
-    .error-message {
-      color: red;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+    }
+
+    .logo span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #00e5ff;
+    }
+
+    .hero {
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .hero-buttons a {
+      background-color: #2196f3;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero-buttons a:hover {
+      background-color: #1976d2;
+    }
+
+    .section-title {
+      margin-top: 60px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #00e5ff;
+      text-align: center;
+    }
+
+    .view-all {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .view-all a {
+      color: #00e5ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .game-card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease;
+      text-align: center;
+      color: #fff;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .game-card h3 {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .game-card .version {
+      font-size: 13px;
+      color: #ccc;
+      margin-bottom: 5px;
+    }
+
+    .stars {
+      color: gold;
       font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .how-it-works {
+      background-color: #0a0a0a;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .how-it-works h2 {
+      color: #00e0ff;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 25px 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .step:hover {
+      transform: scale(1.03);
+    }
+
+    .step .icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      color: #00e0ff;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #cfcfcf;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .contact-button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: #00f6ff;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .contact-popup {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 15px;
+      color: white;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-popup input,
+    .contact-popup textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #222;
+      color: white;
+    }
+
+    .contact-popup button[type="submit"] {
+      background-color: #00ffe5;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .g-recaptcha {
+      margin: 10px 0;
+      align-self: center;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hidden {
       display: none;
     }
+
+    .subscribe {
+      background-color: #1c1c1c;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .subscribe input {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-right: 10px;
+    }
+
+    .subscribe button {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #0f0f0f;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    footer a {
+      color: #00e5ff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- ... [جميع محتويات الصفحة السابقة تبقى كما هي] ... -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
+      <span>Onlixe Games</span>
+    </div>
+  </nav>
 
-  <!-- زر Contact Us -->
+  <section class="hero">
+    <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Hero Banner">
+  </section>
+
+  <div class="hero-buttons">
+    <a href="#explore">Explore</a>
+    <a href="#how-it-works">How It Works</a>
+  </div>
+
+  <h2 class="section-title">Featured Games</h2>
+  <div class="view-all"><a href="#">View All Games →</a></div>
+
+  <div class="games-grid">
+    <!-- Cards here (اختصرناها للوضوح) -->
+  </div>
+
+  <section class="how-it-works" id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="icon">🔍</div><h3>Find Your Game</h3><p>Browse our collection of modded games.</p></div>
+      <div class="step"><div class="icon">⬇️</div><h3>Complete Offer</h3><p>Finish a quick step to unlock.</p></div>
+      <div class="step"><div class="icon">📱</div><h3>Download & Install</h3><p>Install using our guide.</p></div>
+      <div class="step"><div class="icon">🎮</div><h3>Enjoy Premium</h3><p>Unlimited access, no ads!</p></div>
+    </div>
+  </section>
+
   <button class="contact-button" onclick="toggleContact()">Contact Us</button>
 
-  <!-- النموذج المنبثق -->
+  <!-- نموذج الاتصال مع reCAPTCHA -->
   <div id="contact-overlay" class="overlay hidden">
     <div class="contact-popup">
       <h2>Send us a message</h2>
-      <input type="text" id="contact-name" placeholder="Your Name" required>
-      <span class="error-message" id="error-name">Please enter your name.</span>
-
-      <input type="email" id="contact-email" placeholder="Your Email" required>
-      <span class="error-message" id="error-email">Please enter a valid email.</span>
-
-      <textarea id="contact-message" placeholder="How can we help you?" required></textarea>
-      <span class="error-message" id="error-message">Please enter your message.</span>
-
-      <!-- reCAPTCHA -->
-      <div class="g-recaptcha" data-sitekey="6LeruDQrAAAAANz8m3BaBI57LzHHNfaKeihA-ujx"></div>
-
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="How can we help you?" required></textarea>
+      <div class="g-recaptcha" data-sitekey="6LdzujQrAAAAAD-JzRKARd4sm4-lfY0LDpp85d_a"></div>
       <button type="button" onclick="submitContactForm()">Send Message</button>
       <button onclick="toggleContact()" class="close-btn">×</button>
     </div>
   </div>
 
-  <!-- زر العودة إلى الأعلى -->
-  <div id="backToTop" onclick="scrollToTop()">↑</div>
+  <section class="subscribe">
+    <h2>Subscribe for Updates</h2>
+    <p>Be the first to get new MOD releases</p>
+    <input type="email" placeholder="Your Email">
+    <button>Subscribe</button>
+  </section>
 
-  <!-- ... [باقي محتويات الصفحة مثل الاشتراك والفوتر تبقى كما هي] ... -->
-
-  <!-- تحميل مكتبة reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <footer>
+    <p>&copy; 2025 Onlixe Games. All rights reserved.</p>
+    <p>
+      <a href="#">Home</a> |
+      <a href="#">Games</a> |
+      <a href="#">Contact</a> |
+      <a href="#">Terms</a>
+    </p>
+  </footer>
 
   <script>
     function toggleContact() {
@@ -79,68 +382,16 @@
     }
 
     function submitContactForm() {
-      // إزالة رسائل الخطأ السابقة
-      document.getElementById('error-name').style.display = 'none';
-      document.getElementById('error-email').style.display = 'none';
-      document.getElementById('error-message').style.display = 'none';
-
-      // الحصول على القيم
-      const name = document.getElementById('contact-name').value.trim();
-      const email = document.getElementById('contact-email').value.trim();
-      const message = document.getElementById('contact-message').value.trim();
-
-      let valid = true;
-
-      // التحقق من الاسم
-      if (name === '') {
-        document.getElementById('error-name').style.display = 'block';
-        valid = false;
-      }
-
-      // التحقق من البريد الإلكتروني
-      const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-      if (!emailPattern.test(email)) {
-        document.getElementById('error-email').style.display = 'block';
-        valid = false;
-      }
-
-      // التحقق من الرسالة
-      if (message === '') {
-        document.getElementById('error-message').style.display = 'block';
-        valid = false;
-      }
-
-      // التحقق من reCAPTCHA
-      const recaptchaResponse = grecaptcha.getResponse();
-      if (recaptchaResponse.length === 0) {
-        alert('Please complete the reCAPTCHA.');
-        valid = false;
-      }
-
-      if (!valid) {
+      const response = grecaptcha.getResponse();
+      if (!response) {
+        alert("Please complete the reCAPTCHA.");
         return;
       }
 
-      // إرسال البيانات (هنا يمكنك استخدام AJAX لإرسال البيانات إلى الخادم)
       alert("تم إرسال رسالتك بنجاح!");
       toggleContact();
-    }
-
-    // زر العودة إلى الأعلى
-    window.addEventListener('scroll', function() {
-      const backToTop = document.getElementById('backToTop');
-      if (window.pageYOffset > 300) {
-        backToTop.style.display = 'block';
-      } else {
-        backToTop.style.display = 'none';
-      }
-    });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   </script>
 
 </body>
 </html>
-
