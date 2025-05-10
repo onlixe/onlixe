@@ -44,25 +44,21 @@
   <button class="contact-button" onclick="toggleContact()">Contact Us</button>
 
   <!-- النموذج المنبثق -->
-  <div id="contact-overlay" class="overlay hidden">
-    <div class="contact-popup">
-      <h2>Send us a message</h2>
-      <input type="text" id="contact-name" placeholder="Your Name" required>
-      <span class="error-message" id="error-name">Please enter your name.</span>
+<div id="contact-overlay" class="overlay hidden">
+  <div class="contact-popup">
+    <h2>Send us a message</h2>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="How can we help you?" required></textarea>
 
-      <input type="email" id="contact-email" placeholder="Your Email" required>
-      <span class="error-message" id="error-email">Please enter a valid email.</span>
+    <!-- reCAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="6LdzujQrAAAAAD-JzRKARd4sm4-lfY0LDpp85d_a"></div>
 
-      <textarea id="contact-message" placeholder="How can we help you?" required></textarea>
-      <span class="error-message" id="error-message">Please enter your message.</span>
-
-      <!-- reCAPTCHA -->
-      <div class="g-recaptcha" data-sitekey="6LdzujQrAAAAAD-JzRKARd4sm4-lfY0LDpp85d_a"></div>
-
-      <button type="button" onclick="submitContactForm()">Send Message</button>
-      <button onclick="toggleContact()" class="close-btn">×</button>
-    </div>
+    <button type="button" onclick="submitContactForm()">Send Message</button>
+    <button onclick="toggleContact()" class="close-btn">×</button>
   </div>
+</div>
+
 
   <!-- زر العودة إلى الأعلى -->
   <div id="backToTop" onclick="scrollToTop()">↑</div>
