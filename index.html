@@ -94,31 +94,57 @@
       font-weight: bold;
     }
 
-   .games-grid {
+/* الحاوية العامة */
+.games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
+/* البطاقة */
 .game-card {
-  background-color: #1a1a1a;
-  border-radius: 10px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
   overflow: hidden;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  color: #fff;
 }
 
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+/* صورة اللعبة */
 .game-card img {
   width: 100%;
-  height: auto;
-  display: block;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.game-card h4 {
-  color: #00e0ff;
-  padding: 10px;
+/* اسم اللعبة */
+.game-card h3 {
+  font-size: 16px;
+  margin: 5px 0;
 }
+
+/* الإصدار */
+.game-card .version {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+/* النجوم */
+.stars {
+  color: gold;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
 
 
 /* حاوية القسم */
@@ -236,6 +262,37 @@
   </style>
 </head>
 <body>
+
+  <div class="games-grid">
+  <div class="game-card">
+    <img src="beamng.jpg" alt="BeamNG.drive Mobile">
+    <h3>BeamNG.drive Mobile</h3>
+    <div class="version">v0.32.0.0</div>
+    <div class="stars">★★★★★ 4.6</div>
+  </div>
+
+  <div class="game-card">
+    <img src="gta5.jpg" alt="GTA V">
+    <h3>Grand Theft Auto V</h3>
+    <div class="version">v1.0.3095/1.68</div>
+    <div class="stars">★★★★★ 4.9</div>
+  </div>
+
+  <div class="game-card">
+    <img src="assetto.jpg" alt="Assetto Corsa">
+    <h3>Assetto Corsa Mobile</h3>
+    <div class="version">v1.16.4</div>
+    <div class="stars">★★★★★ 4.8</div>
+  </div>
+
+  <div class="game-card">
+    <img src="forza.jpg" alt="Forza Horizon 5">
+    <h3>Forza Horizon 5 Mobile</h3>
+    <div class="version">v1.656.386.0</div>
+    <div class="stars">★★★★★ 5.0</div>
+  </div>
+</div>
+
 
   <nav class="navbar">
     <div class="logo">
