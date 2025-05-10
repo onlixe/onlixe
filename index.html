@@ -392,6 +392,92 @@
   text-align: left;
   margin: 0 auto; /* هذا يجعل النموذج في الوسط */
 }
+
+    /* طبقة التضبيب */
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px);
+  z-index: 99;
+}
+
+/* نافذة الألعاب */
+.games-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px #0002;
+  padding: 32px 22px 26px 22px;
+  z-index: 100;
+  max-width: 850px;
+  width: 93vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.games-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.game-card {
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 2px 16px #2196f111;
+  width: 210px;
+  padding: 16px;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+.game-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+.game-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.download-btn {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.download-btn:hover {
+  background: #1769aa;
+}
+
+/* زر إغلاق النافذة */
+.close-btn {
+  position: absolute;
+  top: 11px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #2196f3;
+  cursor: pointer;
+  z-index: 101;
+}
+.close-btn:hover {
+  color: #e53935;
+}
     .contact-form input,
     .contact-form textarea {
       width: 100%;
@@ -523,11 +609,33 @@
   </div>
 </nav>
 
+  <!-- الطبقة التي تضبب الصفحة -->
+<div id="overlay" style="display:none;"></div>
+
+<!-- نافذة الألعاب المنبثقة -->
+<div id="gamesModal" class="games-modal" style="display:none;">
+  <button id="closeGamesModal" class="close-btn">&times;</button>
+  <div class="games-list">
+    <div class="game-card">
+      <img src="game1.jpg" alt="Game 1">
+      <div class="game-title">Game 1</div>
+      <a href="game1.zip" download class="download-btn">Download</a>
+    </div>
+    <div class="game-card">
+      <img src="game2.jpg" alt="Game 2">
+      <div class="game-title">Game 2</div>
+      <a href="game2.zip" download class="download-btn">Download</a>
+    </div>
+    <!-- كرر نفس الكود لكل لعبة -->
+  </div>
+</div>
+
   <!-- HERO -->
   <section class="hero-section">
     <h1>MOD Games for Everyone</h1>
     <p>Access the best MOD games with high speed, security and a beautiful experience. No limits, no ads!</p>
     <a class="main-cta" href="#games">Explore Games</a>
+    <a href="#" id="exploreGamesLink">Explore Games</a>
     <img class="hero-img" src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Hero Banner">
   </section>
 
@@ -671,6 +779,26 @@ document.addEventListener('click', function(event) {
     document.getElementById('contactForm').style.display = 'block';
     this.style.display = 'none';
   };
+</script>
+
+  <script>
+document.getElementById('exploreGamesLink').onclick = function(e) {
+  e.preventDefault();
+  document.getElementById('gamesModal').style.display = 'block';
+  document.getElementById('overlay').style.display = 'block';
+};
+
+// زر الإغلاق
+document.getElementById('closeGamesModal').onclick = function() {
+  document.getElementById('gamesModal').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+};
+
+// إغلاق النافذة عند الضغط على التضبيب بالخلفية
+document.getElementById('overlay').onclick = function() {
+  document.getElementById('gamesModal').style.display = 'none';
+  document.getElementById('overlay').style.display = 'none';
+};
 </script>
 
   <script>
