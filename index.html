@@ -8,9 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
 
-    *,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
     
@@ -429,20 +427,20 @@
 .games-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
   margin: 0 auto;
   padding: 0;
 }
 
 .game-card {
-  width: 180px;
-  max-width: 44vw;
+  width: 160px;
+  max-width: 45vw;
   min-width: 120px;
   background: #fff;
   border-radius: 13px;
   box-shadow: 0 2px 16px #2196f111;
-  padding: 13px 8px;
+  padding: 12px 6px;
   text-align: center;
   margin-bottom: 8px;
   transition: box-shadow 0.2s;
@@ -450,22 +448,22 @@
 
 @media (max-width: 700px) {
   .game-card {
-    width: 45vw;
-    max-width: 175px;
-    min-width: 110px;
-    padding: 10px 4px;
+    width: 44vw;
+    max-width: 170px;
+    min-width: 100px;
+    padding: 10px 3px;
   }
 }
 
 @media (max-width: 450px) {
   .games-list {
-    gap: 8px;
+    gap: 6px;
   }
   .game-card {
-    width: 98vw;
+    width: 95vw !important;
     max-width: 320px;
     min-width: 90vw;
-    padding: 8px 3px;
+    padding: 7px 2px;
   }
 }
 .game-card img {
