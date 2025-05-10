@@ -1,3 +1,4 @@
+<!-- سكريبت Onlixe Games - نسخة محسّنة -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
   <title>Onlixe Games - MOD Games Hub</title>
   <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     body {
       margin: 0;
@@ -42,10 +44,6 @@
       font-size: 20px;
       font-weight: bold;
       color: #00e5ff;
-    }
-
-    .hero {
-      position: relative;
     }
 
     .hero img {
@@ -94,225 +92,193 @@
       font-weight: bold;
     }
 
-/* الحاوية العامة */
-.games-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-/* البطاقة */
-.game-card {
-  background-color: #1e1e1e;
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-  transition: transform 0.2s ease;
-  text-align: center;
-  color: #fff;
-}
-
-.game-card:hover {
-  transform: translateY(-5px);
-}
-
-/* صورة اللعبة */
-.game-card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* اسم اللعبة */
-.game-card h3 {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-/* الإصدار */
-.game-card .version {
-  font-size: 13px;
-  color: #ccc;
-  margin-bottom: 5px;
-}
-
-/* النجوم */
-.stars {
-  color: gold;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-
-
-/* حاوية القسم */
-.how-it-works {
-  background-color: #0a0a0a;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-/* العنوان */
-.how-it-works h2 {
-  color: #00e0ff;
-  font-size: 28px;
-  margin-bottom: 30px;
-}
-
-/* شبكة المربعات */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-}
-
-/* كل مربع */
-.step {
-  background-color: #1a1a1a;
-  border-radius: 12px;
-  padding: 25px 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.step:hover {
-  transform: scale(1.03);
-}
-
-/* أيقونة */
-.step .icon {
-  font-size: 36px;
-  margin-bottom: 15px;
-}
-
-/* العنوان الفرعي */
-.step h3 {
-  color: #00e0ff;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-/* الوصف */
-.step p {
-  color: #cfcfcf;
-  font-size: 15px;
-  margin: 0;
-}
-
-
-/* زر */
-.contact-button {
-  display: block;
-  margin: 20px auto; /* يجعل الزر في المنتصف أفقيًا */
-  padding: 12px 24px;
-  background-color: #00f6ff;
-  color: black;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  text-align: center;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* الخلفية المعتمة */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-/* النموذج */
-.contact-popup {
-  background-color: #111;
-  padding: 30px;
-  border-radius: 15px;
-  color: white;
-  width: 90%;
-  max-width: 400px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.contact-popup input,
-.contact-popup textarea {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: #222;
-  color: white;
-}
-
-.contact-popup button[type="submit"] {
-  background-color: #00ffe5;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* زر الإغلاق */
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-}
-
-.hidden {
-  display: none;
-}
-
-    .contact-form button,
-    .subscribe button {
-      background-color: #2196f3;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 20px;
     }
 
-    .subscribe {
-      background-color: #1c1c1c;
+    .game-card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      overflow: hidden;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.2s ease;
+      text-align: center;
+      color: #fff;
+    }
+
+    .game-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .game-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .game-card h3 {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+
+    .game-card .version {
+      font-size: 13px;
+      color: #ccc;
+      margin-bottom: 5px;
+    }
+
+    .stars {
+      color: gold;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .how-it-works {
+      background-color: #0a0a0a;
+      padding: 40px 20px;
       text-align: center;
     }
 
+    .how-it-works h2 {
+      color: #00e0ff;
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .step {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 25px 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .step:hover {
+      transform: scale(1.03);
+    }
+
+    .step .icon {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      color: #00e0ff;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #cfcfcf;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .contact-button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 24px;
+      background-color: #00f6ff;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .contact-popup {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 15px;
+      color: white;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-popup input,
+    .contact-popup textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      background-color: #222;
+      color: white;
+    }
+
+    .contact-popup button[type="submit"] {
+      background-color: #00ffe5;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
     footer {
-      background-color: #0f0f0f;
-      padding: 20px;
+      background-color: #0a0a0a;
+      padding: 30px 20px;
       font-size: 14px;
       color: #aaa;
       text-align: center;
     }
 
+    footer p {
+      margin: 10px 0;
+    }
+
     footer a {
       color: #00e5ff;
-      margin: 0 10px;
+      margin: 0 8px;
       text-decoration: none;
     }
 
     footer a:hover {
       text-decoration: underline;
     }
-
   </style>
 </head>
 <body>
@@ -337,108 +303,97 @@
   <div class="view-all"><a href="#">View All Games →</a></div>
 
   <div class="games-grid">
-  <div class="game-card">
-    <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="BeamNG.drive Mobile">
-    <h3>BeamNG.drive Mobile</h3>
-    <div class="version">v0.32.0.0</div>
-    <div class="stars">★★★★★ 4.6</div>
-  </div>
-
-  <div class="game-card">
-    <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="GTA V">
-    <h3>Grand Theft Auto V</h3>
-    <div class="version">v1.0.3095/1.68</div>
-    <div class="stars">★★★★★ 4.9</div>
-  </div>
-
-  <div class="game-card">
-    <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Assetto Corsa">
-    <h3>Assetto Corsa Mobile</h3>
-    <div class="version">v1.16.4</div>
-    <div class="stars">★★★★★ 4.8</div>
-  </div>
-
-  <div class="game-card">
-    <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Forza Horizon 5">
-    <h3>Forza Horizon 5 Mobile</h3>
-    <div class="version">v1.656.386.0</div>
-    <div class="stars">★★★★★ 5.0</div>
-  </div>
-</div>
-
-  <section class="how-it-works">
-  <h2>How It Works</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="icon">🔍</div>
-      <h3>Find Your Game</h3>
-      <p>Browse our collection of modded games or search for what you want.</p>
+    <!-- الألعاب الأصلية + إضافات -->
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="BeamNG.drive Mobile">
+      <h3>BeamNG.drive Mobile</h3>
+      <div class="version">v0.32.0.0</div>
+      <div class="stars">★★★★★ 4.6</div>
     </div>
-    <div class="step">
-      <div class="icon">⬇️</div>
-      <h3>Complete Offer</h3>
-      <p>Complete a quick offer (less than 1 minute) to unlock the download.</p>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="GTA V">
+      <h3>Grand Theft Auto V</h3>
+      <div class="version">v1.0.3095/1.68</div>
+      <div class="stars">★★★★★ 4.9</div>
     </div>
-    <div class="step">
-      <div class="icon">📱</div>
-      <h3>Download & Install</h3>
-      <p>Get your download link and install the game with our instructions.</p>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Assetto Corsa">
+      <h3>Assetto Corsa Mobile</h3>
+      <div class="version">v1.16.4</div>
+      <div class="stars">★★★★★ 4.8</div>
     </div>
-    <div class="step">
-      <div class="icon">🎮</div>
-      <h3>Enjoy Premium</h3>
-      <p>Play with all premium features unlocked - unlimited money, no ads!</p>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Forza Horizon 5">
+      <h3>Forza Horizon 5 Mobile</h3>
+      <div class="version">v1.656.386.0</div>
+      <div class="stars">★★★★★ 5.0</div>
+    </div>
+    <!-- ألعاب إضافية -->
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Minecraft PE">
+      <h3>Minecraft Pocket Edition</h3>
+      <div class="version">v1.20.41</div>
+      <div class="stars">★★★★★ 4.7</div>
+    </div>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="PUBG Mobile MOD">
+      <h3>PUBG Mobile MOD</h3>
+      <div class="version">v3.1.0</div>
+      <div class="stars">★★★★★ 4.5</div>
     </div>
   </div>
-</section>
 
-
-<!-- زر Contact Us -->
-<button class="contact-button" onclick="toggleContact()">Contact Us</button>
-
-
-<!-- النموذج المنبثق -->
-<div id="contact-overlay" class="overlay hidden">
-  <div class="contact-popup">
-    <h2>Send us a message</h2>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="How can we help you?" required></textarea>
-    <button type="button" onclick="submitContactForm()">Send Message</button>
-    <button onclick="toggleContact()" class="close-btn">×</button>
-  </div>
-</div>
-
-
-  <section class="subscribe">
-    <h2>Subscribe for Updates</h2>
-    <p>Be the first to get new MOD releases</p>
-    <input type="email" placeholder="Your Email">
-    <button>Subscribe</button>
+  <section class="how-it-works" id="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="icon">🔍</div><h3>Find Your Game</h3><p>Browse or search any game you want.</p></div>
+      <div class="step"><div class="icon">⬇️</div><h3>Complete Offer</h3><p>Quick step to unlock your download.</p></div>
+      <div class="step"><div class="icon">📱</div><h3>Download & Install</h3><p>Install the game easily.</p></div>
+      <div class="step"><div class="icon">🎮</div><h3>Enjoy Premium</h3><p>No ads, unlimited features.</p></div>
+    </div>
   </section>
+
+  <button class="contact-button" onclick="toggleContact()">Contact Us</button>
+
+  <div id="contact-overlay" class="overlay hidden">
+    <div class="contact-popup">
+      <h2>Send us a message</h2>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="How can we help you?" required></textarea>
+      <div class="g-recaptcha" data-sitekey="6LdzujQrAAAAAD-JzRKARd4sm4-lfY0LDpp85d_a"></div>
+      <button type="button" onclick="submitContactForm()">Send Message</button>
+      <button onclick="toggleContact()" class="close-btn">×</button>
+    </div>
+  </div>
 
   <footer>
     <p>&copy; 2025 Onlixe Games. All rights reserved.</p>
     <p>
       <a href="#">Home</a> |
       <a href="#">Games</a> |
-      <a href="#">Contact</a> |
-      <a href="#">Terms</a>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Use</a> |
+      <a href="#">About Us</a> |
+      <a href="#" onclick="toggleContact()">Contact</a>
     </p>
   </footer>
-  
-  <script>
-  function toggleContact() {
-    const overlay = document.getElementById('contact-overlay');
-    overlay.classList.toggle('hidden');
-  }
-    function submitContactForm() {
-  alert("تم إرسال رسالتك بنجاح!");
-  toggleContact(); // لإغلاق النافذة
-}
-    
-</script>
 
+  <script>
+    function toggleContact() {
+      document.getElementById('contact-overlay').classList.toggle('hidden');
+    }
+
+    function submitContactForm() {
+      if (grecaptcha.getResponse() === "") {
+        alert("Please verify reCAPTCHA before sending.");
+        return;
+      }
+      alert("تم إرسال رسالتك بنجاح!");
+      toggleContact();
+    }
+  </script>
 
 </body>
 </html>
+
