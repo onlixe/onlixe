@@ -6,85 +6,317 @@
   <title>Onlixe Games - MOD Games Hub</title>
   <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
-    /* [تم تحسين التنسيق والألوان لتوفير تجربة مستخدم أفضل] */
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(to bottom, #0d1b2a, #1b263b);
       color: #ffffff;
     }
-    /* [تم تحسين تصميم البطاقات والأزرار] */
-    .game-card {
-      background-color: #1e1e1e;
-      border-radius: 12px;
-      overflow: hidden;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      transition: transform 0.2s ease;
-      text-align: center;
-      color: #fff;
-    }
-    .game-card:hover {
-      transform: translateY(-5px);
-    }
-    .game-card img {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-    .game-card h3 {
-      font-size: 16px;
-      margin: 5px 0;
-    }
-    .game-card .version {
-      font-size: 13px;
-      color: #ccc;
-      margin-bottom: 5px;
-    }
-    .stars {
-      color: gold;
-      font-size: 14px;
-      margin-top: 5px;
-    }
-    /* [تم تحسين نموذج التواصل وإضافة reCAPTCHA] */
-    .contact-popup {
-      background-color: #111;
-      padding: 30px;
-      border-radius: 15px;
-      color: white;
-      width: 90%;
-      max-width: 400px;
-      position: relative;
+
+    .navbar {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #0d1b2a;
+      border-bottom: 1px solid #1b263b;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
       gap: 10px;
     }
-    .contact-popup input,
-    .contact-popup textarea {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-      background-color: #222;
-      color: white;
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
     }
-    .contact-popup button[type="submit"] {
-      background-color: #00ffe5;
+
+    .logo span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #00e5ff;
+    }
+
+    .hero {
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .hero-buttons a {
+      background-color: #2196f3;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero-buttons a:hover {
+      background-color: #1976d2;
+    }
+
+    .section-title {
+      margin-top: 60px;
+      font-size: 24px;
+      font-weight: 700;
+      color: #00e5ff;
+      text-align: center;
+    }
+
+    .view-all {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .view-all a {
+      color: #00e5ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+/* الحاوية العامة */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* البطاقة */
+.game-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  transition: transform 0.2s ease;
+  text-align: center;
+  color: #fff;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+/* صورة اللعبة */
+.game-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* اسم اللعبة */
+.game-card h3 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* الإصدار */
+.game-card .version {
+  font-size: 13px;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+/* النجوم */
+.stars {
+  color: gold;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+
+/* حاوية القسم */
+.how-it-works {
+  background-color: #0a0a0a;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* العنوان */
+.how-it-works h2 {
+  color: #00e0ff;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* شبكة المربعات */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+/* كل مربع */
+.step {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 25px 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: scale(1.03);
+}
+
+/* أيقونة */
+.step .icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+/* العنوان الفرعي */
+.step h3 {
+  color: #00e0ff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* الوصف */
+.step p {
+  color: #cfcfcf;
+  font-size: 15px;
+  margin: 0;
+}
+
+
+/* زر */
+.contact-button {
+  display: block;
+  margin: 20px auto; /* يجعل الزر في المنتصف أفقيًا */
+  padding: 12px 24px;
+  background-color: #00f6ff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* الخلفية المعتمة */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* النموذج */
+.contact-popup {
+  background-color: #111;
+  padding: 30px;
+  border-radius: 15px;
+  color: white;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-popup input,
+.contact-popup textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #222;
+  color: white;
+}
+
+.contact-popup button[type="submit"] {
+  background-color: #00ffe5;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* زر الإغلاق */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+    .contact-form button,
+    .subscribe button {
+      background-color: #2196f3;
+      color: white;
       border: none;
-      padding: 10px;
-      border-radius: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
       cursor: pointer;
     }
-    .g-recaptcha {
-      margin: 10px 0;
+
+    .subscribe {
+      background-color: #1c1c1c;
+      text-align: center;
     }
+
+    footer {
+      background-color: #0f0f0f;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    footer a {
+      color: #00e5ff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
 
-  <!-- [تم تحسين الشريط العلوي] -->
   <nav class="navbar">
     <div class="logo">
       <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
@@ -92,77 +324,92 @@
     </div>
   </nav>
 
-  <!-- [تم تحسين قسم البطل] -->
   <section class="hero">
     <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Hero Banner">
   </section>
 
-  <!-- [تم تحسين أزرار البطل] -->
   <div class="hero-buttons">
     <a href="#explore">Explore</a>
     <a href="#how-it-works">How It Works</a>
   </div>
 
-  <!-- [تم تحسين قسم الألعاب المميزة] -->
   <h2 class="section-title">Featured Games</h2>
   <div class="view-all"><a href="#">View All Games →</a></div>
 
   <div class="games-grid">
-    <!-- [تم تحسين بطاقات الألعاب بإضافة وصف وحجم اللعبة] -->
-    <div class="game-card">
-      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="BeamNG.drive Mobile">
-      <h3>BeamNG.drive Mobile</h3>
-      <div class="version">v0.32.0.0</div>
-      <div class="stars">★★★★★ 4.6</div>
-      <p>Experience realistic driving physics in this mobile adaptation of BeamNG.drive.</p>
-    </div>
-    <!-- [أضف المزيد من بطاقات الألعاب هنا] -->
+  <div class="game-card">
+    <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="BeamNG.drive Mobile">
+    <h3>BeamNG.drive Mobile</h3>
+    <div class="version">v0.32.0.0</div>
+    <div class="stars">★★★★★ 4.6</div>
   </div>
 
-  <!-- [تم تحسين قسم كيفية العمل] -->
-  <section class="how-it-works" id="how-it-works">
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="icon">🔍</div>
-        <h3>Find Your Game</h3>
-        <p>Browse our collection of modded games or search for what you want.</p>
-      </div>
-      <div class="step">
-        <div class="icon">⬇️</div>
-        <h3>Complete Offer</h3>
-        <p>Complete a quick offer (less than 1 minute) to unlock the download.</p>
-      </div>
-      <div class="step">
-        <div class="icon">📱</div>
-        <h3>Download & Install</h3>
-        <p>Get your download link and install the game with our instructions.</p>
-      </div>
-      <div class="step">
-        <div class="icon">🎮</div>
-        <h3>Enjoy Premium</h3>
-        <p>Play with all premium features unlocked - unlimited money, no ads!</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- [تم تحسين زر التواصل] -->
-  <button class="contact-button" onclick="toggleContact()">Contact Us</button>
-
-  <!-- [تم تحسين نموذج التواصل بإضافة reCAPTCHA] -->
-  <div id="contact-overlay" class="overlay hidden">
-    <div class="contact-popup">
-      <h2>Send us a message</h2>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="How can we help you?" required></textarea>
-      <div class="g-recaptcha" data-sitekey="6LdzujQrAAAAAD-JzRKARd4sm4-lfY0LDpp85d_a"></div>
-      <button type="button" onclick="submitContactForm()">Send Message</button>
-      <button onclick="toggleContact()" class="close-btn">×</button>
-    </div>
+  <div class="game-card">
+    <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="GTA V">
+    <h3>Grand Theft Auto V</h3>
+    <div class="version">v1.0.3095/1.68</div>
+    <div class="stars">★★★★★ 4.9</div>
   </div>
 
-  <!-- [تم تحسين قسم الاشتراك] -->
+  <div class="game-card">
+    <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Assetto Corsa">
+    <h3>Assetto Corsa Mobile</h3>
+    <div class="version">v1.16.4</div>
+    <div class="stars">★★★★★ 4.8</div>
+  </div>
+
+  <div class="game-card">
+    <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Forza Horizon 5">
+    <h3>Forza Horizon 5 Mobile</h3>
+    <div class="version">v1.656.386.0</div>
+    <div class="stars">★★★★★ 5.0</div>
+  </div>
+</div>
+
+  <section class="how-it-works">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="icon">🔍</div>
+      <h3>Find Your Game</h3>
+      <p>Browse our collection of modded games or search for what you want.</p>
+    </div>
+    <div class="step">
+      <div class="icon">⬇️</div>
+      <h3>Complete Offer</h3>
+      <p>Complete a quick offer (less than 1 minute) to unlock the download.</p>
+    </div>
+    <div class="step">
+      <div class="icon">📱</div>
+      <h3>Download & Install</h3>
+      <p>Get your download link and install the game with our instructions.</p>
+    </div>
+    <div class="step">
+      <div class="icon">🎮</div>
+      <h3>Enjoy Premium</h3>
+      <p>Play with all premium features unlocked - unlimited money, no ads!</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- زر Contact Us -->
+<button class="contact-button" onclick="toggleContact()">Contact Us</button>
+
+
+<!-- النموذج المنبثق -->
+<div id="contact-overlay" class="overlay hidden">
+  <div class="contact-popup">
+    <h2>Send us a message</h2>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="How can we help you?" required></textarea>
+    <button type="button" onclick="submitContactForm()">Send Message</button>
+    <button onclick="toggleContact()" class="close-btn">×</button>
+  </div>
+</div>
+
+
   <section class="subscribe">
     <h2>Subscribe for Updates</h2>
     <p>Be the first to get new MOD releases</p>
@@ -170,7 +417,6 @@
     <button>Subscribe</button>
   </section>
 
-  <!-- [تم تحسين التذييل] -->
   <footer>
     <p>&copy; 2025 Onlixe Games. All rights reserved.</p>
     <p>
@@ -180,22 +426,19 @@
       <a href="#">Terms</a>
     </p>
   </footer>
-
+  
   <script>
-    function toggleContact() {
-      const overlay = document.getElementById('contact-overlay');
-      overlay.classList.toggle('hidden');
-    }
-
+  function toggleContact() {
+    const overlay = document.getElementById('contact-overlay');
+    overlay.classList.toggle('hidden');
+  }
     function submitContactForm() {
-      if (grecaptcha.getResponse() === "") {
-        alert("Please verify reCAPTCHA before sending.");
-        return;
-      }
-      alert("تم إرسال رسالتك بنجاح!");
-      toggleContact();
-    }
-  </script>
+  alert("تم إرسال رسالتك بنجاح!");
+  toggleContact(); // لإغلاق النافذة
+}
+    
+</script>
+
 
 </body>
 </html>
