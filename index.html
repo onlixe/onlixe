@@ -3,274 +3,145 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Onlixe Games - Download Free MOD Games</title>
+  <title>Onlixe Games - Unlock Premium Games</title>
   <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom, #0d1b2a, #1b263b);
-      color: #ffffff;
-      text-align: center;
+      background-color: #111;
+      color: white;
     }
 
     .navbar {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 15px 30px;
-      background-color: #0d1b2a;
-      border-bottom: 1px solid #1b263b;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      align-items: center;
+      padding: 15px 20px;
+      background-color: #000;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
     }
 
     .logo img {
-      width: 32px;
-      height: 32px;
-      border-radius: 4px;
-    }
-
-    .logo span {
-      font-size: 20px;
-      font-weight: bold;
-      color: #00e5ff;
-    }
-
-    .hero-banner img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-    }
-
-    header {
-      padding: 40px 20px 30px;
-    }
-
-    header h1 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 16px;
-      color: #c0c0c0;
-      margin-bottom: 30px;
-    }
-
-    .download-btn {
-      background-color: #2196f3;
-      border: none;
-      color: white;
-      font-size: 16px;
-      padding: 12px 30px;
+      width: 36px;
+      height: 36px;
       border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .download-btn:hover {
-      background-color: #1976d2;
-    }
-
-    .section-title {
-      margin-top: 60px;
-      font-size: 24px;
-      font-weight: 700;
-      color: #00e5ff;
-    }
-
-    .games-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-      gap: 20px;
-    }
-
-    .game-card {
-      background-color: #2c3e50;
-      padding: 20px;
-      border-radius: 10px;
-      width: 260px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    }
-
-    .game-card img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .game-card h3 {
-      font-size: 18px;
-      margin: 10px 0 5px;
-    }
-
-    .game-card p {
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    .how-it-works {
-      padding: 40px 20px;
-      text-align: left;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .how-it-works h2 {
-      color: #00e5ff;
-    }
-
-    .contact-form {
-      padding: 40px 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .contact-form h2 {
-      color: #00e5ff;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .contact-form button {
-      background-color: #2196f3;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-
-    .subscribe {
-      padding: 40px 20px;
-      background-color: #1c1c1c;
-    }
-
-    .subscribe h2 {
-      color: #00e5ff;
-    }
-
-    .subscribe input[type="email"] {
-      padding: 10px;
-      width: 300px;
-      max-width: 80%;
-      border-radius: 5px;
       margin-right: 10px;
     }
 
-    .subscribe button {
-      background-color: #2196f3;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
+    .logo-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: #00f0ff;
     }
 
-    footer {
-      background-color: #0f0f0f;
-      padding: 20px;
+    .logo-subtitle {
       font-size: 14px;
-      color: #aaa;
+      color: #ccc;
+      margin-top: 4px;
     }
 
-    footer a {
+    .menu-icon {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .explore-btn {
+      background-color: #00ffd5;
+      color: black;
+    }
+
+    .how-btn {
+      background-color: #ff6e6e;
+      color: white;
+    }
+
+    .section {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
       color: #00e5ff;
-      margin: 0 10px;
-      text-decoration: none;
+      font-size: 26px;
+      margin-bottom: 10px;
     }
 
-    footer a:hover {
+    .section a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section a:hover {
       text-decoration: underline;
     }
+
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
-      <span>Onlixe Games</span>
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <div>
+      <div class="logo">
+        <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Logo">
+        <div>
+          <div class="logo-title">Onlixe Games</div>
+          <div class="logo-subtitle">Unlock Premium Games</div>
+        </div>
+      </div>
     </div>
-  </nav>
-
-  <section class="hero-banner">
-    <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Hero Banner">
-  </section>
-
-  <header>
-    <h1>Download Free MOD Games</h1>
-    <p>Onlixe Games is your #1 source for modded Android & iOS games</p>
-    <button class="download-btn">Download Now</button>
-  </header>
-
-  <h2 class="section-title">Featured Games</h2>
-  <div class="games-container">
-    <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="BeamNG Drive">
-      <h3>BeamNG.drive Mobile</h3>
-      <p>Version: 0.32.0.0 | Rating: 4.6</p>
-    </div>
-    <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="GTA V">
-      <h3>GTA V Mobile</h3>
-      <p>Version: 1.68 | Rating: 4.9</p>
-    </div>
-    <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Fortnite">
-      <h3>Fortnite Mobile</h3>
-      <p>Version: Latest | Rating: 4.7</p>
-    </div>
+    <div class="menu-icon">&#9776;</div>
   </div>
 
-  <section class="how-it-works">
-    <h2>How It Works</h2>
-    <p>1. Choose your game</p>
-    <p>2. Complete short offer</p>
-    <p>3. Download & enjoy premium features!</p>
-  </section>
+  <!-- Banner Image -->
+  <div class="banner">
+    <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Game Characters">
+  </div>
 
-  <section class="contact-form">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+  <!-- Buttons -->
+  <div class="buttons">
+    <button class="btn explore-btn">🎮 Explore</button>
+    <button class="btn how-btn">❓ How It Works</button>
+  </div>
 
-  <section class="subscribe">
-    <h2>Subscribe for Updates</h2>
-    <p>Be the first to get new MOD releases</p>
-    <input type="email" placeholder="Your Email">
-    <button>Subscribe</button>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Onlixe Games. All rights reserved.</p>
-    <p>
-      <a href="#">Home</a> |
-      <a href="#">Games</a> |
-      <a href="#">Contact</a> |
-      <a href="#">Terms</a>
-    </p>
-  </footer>
+  <!-- Featured Games -->
+  <div class="section">
+    <h2>Featured Games</h2>
+    <a href="#">View All Games →</a>
+  </div>
 
 </body>
 </html>
