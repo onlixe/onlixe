@@ -40,65 +40,304 @@
       color: #2196f3;
       letter-spacing: 1px;
     }
-    /* ====== برغر ====== */
-    .burger {
-      font-size: 28px;
-      color: #2196f3;
-      padding: 7px 14px;
-      border: none;
-      background: none;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.2s;
-      cursor: pointer;
-      margin-left: 10px;
-      display: block;
+    .nav-links {
+      display: flex;
+      gap: 18px;
     }
-    .burger:hover {
-      background: #e3f2fd;
-    }
-    /* قائمة البرغر */
-    .burger-menu {
-      display: none;
-      position: absolute;
-      top: 58px;
-      right: 32px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 12px 32px #2196f245;
-      min-width: 170px;
-      z-index: 1000;
-      flex-direction: column;
-      padding: 10px 0;
-      animation: fadeIn 0.2s;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    .burger-menu a {
-      display: block;
+    .nav-links a {
       color: #232a34;
-      padding: 12px 24px;
       text-decoration: none;
-      font-size: 17px;
       font-weight: 500;
-      border-bottom: 1px solid #f1f4f8;
-      transition: background 0.18s;
+      font-size: 16px;
+      transition: color 0.2s;
+      padding: 6px 12px;
+      border-radius: 5px;
     }
-    .burger-menu a:last-child {
-      border-bottom: none;
-    }
-    .burger-menu a:hover {
+    .nav-links a:hover {
       background: #e3f2fd;
       color: #1976d2;
     }
-    /* إخفاء الروابط العلوية */
-    .nav-links,
     .header-cta {
-      display: none !important;
+      background: #2196f3;
+      color: #fff;
+      padding: 9px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-left: 18px;
+      transition: background 0.2s;
     }
-    /* Responsive adjustments */
+    .header-cta:hover {
+      background: #1769aa;
+    }
+    .hero-section {
+      background: linear-gradient(120deg, #e3f2fd 60%, #bbdefb 100%);
+      padding: 70px 0 25px 0;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #232a34;
+      margin-bottom: 18px;
+      line-height: 1.1;
+    }
+    .hero-section p {
+      font-size: 20px;
+      color: #4b5563;
+      margin-bottom: 30px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .main-cta {
+      background: #2196f3;
+      color: #fff;
+      padding: 13px 34px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px #2196f328;
+      transition: background 0.2s;
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+    .main-cta:hover {
+      background: #1769aa;
+    }
+    .hero-img {
+      margin: 0 auto;
+      display: block;
+      width: 300px;
+      max-width: 90vw;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px #1976d211;
+      margin-top: 28px;
+    }
+    /* ألعاب */
+    .games-section {
+      padding: 55px 0 25px 0;
+      background: #fff;
+    }
+    .section-title {
+      color: #2196f3;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 12px auto;
+      padding: 0 12px;
+    }
+    .game-card {
+      background: #f3f8fa;
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 17px 8px 13px 8px;
+      box-shadow: 0 4px 12px #2196f315;
+      transition: transform 0.18s;
+      text-align: center;
+      color: #232a34;
+    }
+    .game-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 10px 32px #2196f32a;
+    }
+    .game-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      object-fit: cover;
+      background: #fff;
+      box-shadow: 0 2px 8px #2196f319;
+    }
+    .game-card h3 {
+      font-size: 15.5px;
+      margin: 5px 0 2px 0;
+      font-weight: 700;
+      color: #1976d2;
+    }
+    .game-card .version {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 3px;
+    }
+    .stars {
+      color: #ffb300;
+      font-size: 13px;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    /* الميزات */
+    .features-section {
+      padding: 50px 0 25px 0;
+      background: #f8fafc;
+    }
+    .features-title {
+      font-size: 26px;
+      color: #1976d2;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 34px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 22px;
+      max-width: 900px;
+      margin: 0 auto 20px auto;
+      padding: 0 12px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 26px 16px 22px 16px;
+      text-align: center;
+      box-shadow: 0 2px 12px #2196f111;
+      transition: box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      box-shadow: 0 6px 32px #2196f122;
+    }
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 13px;
+      color: #2196f3;
+    }
+    .feature-card h3 {
+      margin: 0 0 8px 0;
+      color: #23395d;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .feature-card p {
+      color: #555;
+      font-size: 14px;
+    }
+    /* كيف يعمل */
+    .how-section {
+      background: #fff;
+      padding: 50px 0 20px 0;
+    }
+    .how-title {
+      color: #1976d2;
+      font-size: 26px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .how-steps {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+      max-width: 900px;
+      margin: 0 auto 0 auto;
+      padding: 0 12px;
+    }
+    .how-step {
+      background: #f3f8fa;
+      border-radius: 12px;
+      padding: 22px 10px;
+      text-align: center;
+      width: 170px;
+      box-shadow: 0 2px 12px #2196f111;
+    }
+    .how-step .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #2196f3;
+    }
+    .how-step h4 {
+      font-size: 15.5px;
+      color: #222;
+      margin-bottom: 7px;
+      font-weight: 700;
+    }
+    .how-step p {
+      color: #555;
+      font-size: 13px;
+      margin: 0;
+    }
+    /* تواصل */
+    .contact-section {
+      background: #f8fafc;
+      padding: 40px 0 18px 0;
+      text-align: center;
+    }
+    .contact-section h2 {
+      color: #2196f3;
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    .contact-form {
+      display: inline-block;
+      background: #fff;
+      padding: 24px 18px;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px #2196f111;
+      max-width: 340px;
+      width: 100%;
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-bottom: 12px;
+      padding: 9px;
+      border: 1px solid #e3e8ee;
+      border-radius: 7px;
+      font-size: 14px;
+      background: #f8fafc;
+      color: #232a34;
+      resize: none;
+      font-family: inherit;
+      box-sizing: border-box;
+    }
+    .contact-form button {
+      background: #2196f3;
+      color: #fff;
+      border: none;
+      padding: 11px 0;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover {
+      background: #1769aa;
+    }
+    footer {
+      background: #fff;
+      padding: 18px 8px;
+      color: #888;
+      font-size: 14px;
+      text-align: center;
+      border-top: 1px solid #e0e3ea;
+      margin-top: 30px;
+    }
+    footer a {
+      color: #2196f3;
+      margin: 0 6px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+    /* Responsive */
     @media (max-width: 850px) {
       .games-grid, .features-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -113,18 +352,17 @@
         font-size: 27px;
       }
     }
-    @media (max-width: 700px) {
-      .navbar {
-        padding: 10px 10px;
-      }
-      .logo span {
-        font-size: 18px;
-      }
-      .burger-menu {
-        right: 10px;
-      }
-    }
     @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 4vw;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 7px;
+      }
       .hero-section {
         padding: 35px 0 12px 0;
       }
@@ -159,15 +397,6 @@
         padding: 13px 6px;
       }
     }
-    @media (max-width: 400px) {
-      .logo img {
-        width: 30px;
-        height: 30px;
-      }
-      .burger-menu {
-        right: 5px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -177,13 +406,13 @@
       <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
       <span>Onlixe Games</span>
     </div>
-    <button class="burger" onclick="toggleMenu(event)">&#9776;</button>
-    <div class="burger-menu" id="burgerMenu">
+    <div class="nav-links">
       <a href="#games">Games</a>
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#contact">Contact</a>
     </div>
+    <a class="header-cta" href="#contact">Get Started</a>
   </nav>
 
   <!-- HERO -->
@@ -305,28 +534,5 @@
     <a href="#how">How it works</a>
     <a href="#contact">Contact</a>
   </footer>
-  
-  <!-- برمجة القائمة المنسدلة -->
-  <script>
-    function toggleMenu(e) {
-      e.preventDefault();
-      var menu = document.getElementById('burgerMenu');
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
-    }
-
-    // إغلاق القائمة عند الضغط خارجها
-    document.addEventListener('click', function(event) {
-      var menu = document.getElementById('burgerMenu');
-      var burger = document.querySelector('.burger');
-      if (
-        menu &&
-        menu.style.display === 'block' &&
-        !menu.contains(event.target) &&
-        !burger.contains(event.target)
-      ) {
-        menu.style.display = 'none';
-      }
-    });
-  </script>
 </body>
 </html>
