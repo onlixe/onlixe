@@ -246,11 +246,6 @@
       cursor: pointer;
     }
 
-    .g-recaptcha {
-      margin: 10px 0;
-      align-self: center;
-    }
-
     .close-btn {
       position: absolute;
       top: 10px;
@@ -264,28 +259,6 @@
 
     .hidden {
       display: none;
-    }
-
-    .subscribe {
-      background-color: #1c1c1c;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    .subscribe input {
-      padding: 10px;
-      border-radius: 5px;
-      border: none;
-      margin-right: 10px;
-    }
-
-    .subscribe button {
-      background-color: #2196f3;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
     }
 
     footer {
@@ -330,28 +303,67 @@
   <div class="view-all"><a href="#">View All Games →</a></div>
 
   <div class="games-grid">
-    <!-- Cards here (اختصرناها للوضوح) -->
+    <!-- جميع الألعاب التي طلبتها -->
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="BeamNG.drive Mobile">
+      <h3>BeamNG.drive Mobile</h3>
+      <div class="version">v0.32.0.0</div>
+      <div class="stars">★★★★★ 4.6</div>
+    </div>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="GTA V">
+      <h3>Grand Theft Auto V</h3>
+      <div class="version">v1.0.3095/1.68</div>
+      <div class="stars">★★★★★ 4.9</div>
+    </div>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Assetto Corsa">
+      <h3>Assetto Corsa Mobile</h3>
+      <div class="version">v1.16.4</div>
+      <div class="stars">★★★★★ 4.8</div>
+    </div>
+    <div class="game-card">
+      <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Forza Horizon 5">
+      <h3>Forza Horizon 5 Mobile</h3>
+      <div class="version">v1.656.386.0</div>
+      <div class="stars">★★★★★ 5.0</div>
+    </div>
   </div>
 
   <section class="how-it-works" id="how-it-works">
     <h2>How It Works</h2>
     <div class="steps">
-      <div class="step"><div class="icon">🔍</div><h3>Find Your Game</h3><p>Browse our collection of modded games.</p></div>
-      <div class="step"><div class="icon">⬇️</div><h3>Complete Offer</h3><p>Finish a quick step to unlock.</p></div>
-      <div class="step"><div class="icon">📱</div><h3>Download & Install</h3><p>Install using our guide.</p></div>
-      <div class="step"><div class="icon">🎮</div><h3>Enjoy Premium</h3><p>Unlimited access, no ads!</p></div>
+      <div class="step">
+        <div class="icon">🔍</div>
+        <h3>Find Your Game</h3>
+        <p>Browse our collection of modded games or search for what you want.</p>
+      </div>
+      <div class="step">
+        <div class="icon">⬇️</div>
+        <h3>Complete Offer</h3>
+        <p>Complete a quick offer (less than 1 minute) to unlock the download.</p>
+      </div>
+      <div class="step">
+        <div class="icon">📱</div>
+        <h3>Download & Install</h3>
+        <p>Get your download link and install the game with our instructions.</p>
+      </div>
+      <div class="step">
+        <div class="icon">🎮</div>
+        <h3>Enjoy Premium</h3>
+        <p>Play with all premium features unlocked - unlimited money, no ads!</p>
+      </div>
     </div>
   </section>
 
   <button class="contact-button" onclick="toggleContact()">Contact Us</button>
 
-  <!-- نموذج الاتصال مع reCAPTCHA -->
   <div id="contact-overlay" class="overlay hidden">
     <div class="contact-popup">
       <h2>Send us a message</h2>
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="How can we help you?" required></textarea>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="How can we help you?" required></textarea>
       <div class="g-recaptcha" data-sitekey="6LdzujQrAAAAAD-JzRKARd4sm4-lfY0LDpp85d_a"></div>
       <button type="button" onclick="submitContactForm()">Send Message</button>
       <button onclick="toggleContact()" class="close-btn">×</button>
@@ -382,12 +394,10 @@
     }
 
     function submitContactForm() {
-      const response = grecaptcha.getResponse();
-      if (!response) {
-        alert("Please complete the reCAPTCHA.");
+      if (grecaptcha.getResponse() === "") {
+        alert("Please verify reCAPTCHA before sending.");
         return;
       }
-
       alert("تم إرسال رسالتك بنجاح!");
       toggleContact();
     }
@@ -395,3 +405,4 @@
 
 </body>
 </html>
+
