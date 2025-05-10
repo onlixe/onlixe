@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Featured Games</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+    }
+    header {
+      background: #000;
+      padding: 1rem;
+      text-align: center;
+      font-size: 2rem;
+      color: #0ff;
+    }
+    .games {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .game {
+      background: #222;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+    }
+    .game img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .game h3 {
+      color: #0ff;
+    }
+  </style>
+</head>
+<body>
+  <header>Featured Games</header>
+  <section class="games">
+    <div class="game">
+      <img src="https://via.placeholder.com/300x150.png?text=Game+1" alt="Game 1">
+      <h3>Game Title 1</h3>
+      <p>Short description of the game.</p>
+    </div>
+    <div class="game">
+      <img src="https://via.placeholder.com/300x150.png?text=Game+2" alt="Game 2">
+      <h3>Game Title 2</h3>
+      <p>Short description of the game.</p>
+    </div>
+  </section>
+</body>
+</html>
