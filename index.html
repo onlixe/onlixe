@@ -422,18 +422,41 @@
 .games-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 18px;
   justify-content: center;
-  margin-top: 20px;
 }
+
 .game-card {
+  width: 210px;
   background: #fff;
   border-radius: 13px;
   box-shadow: 0 2px 16px #2196f111;
-  width: 210px;
   padding: 16px;
   text-align: center;
+  margin-bottom: 12px;
   transition: box-shadow 0.2s;
+}
+
+/* الشاشات المتوسطة - صفين */
+@media (max-width: 700px) {
+  .game-card {
+    width: 44vw;   /* بطاقتين في الصف */
+    padding: 12px 5px;
+  }
+  .games-list {
+    gap: 10px;
+  }
+}
+
+/* الشاشات الصغيرة جدًا - صف واحد */
+@media (max-width: 430px) {
+  .game-card {
+    width: 92vw;   /* بطاقة واحدة في الصف */
+    padding: 10px 2px;
+  }
+  .games-list {
+    gap: 7px;
+  }
 }
 .game-card img {
   width: 100%;
