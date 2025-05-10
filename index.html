@@ -3,304 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Onlixe Games - Download Free MOD Games</title>
-  <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Onlixe Games</title>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom, #0d1b2a, #1b263b);
-      color: #ffffff;
-      text-align: center;
+      font-family: sans-serif;
+      background-color: #121212;
+      color: white;
     }
 
-    .navbar {
+    header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 15px 30px;
-      background-color: #0d1b2a;
-      border-bottom: 1px solid #1b263b;
-      position: sticky;
-      top: 0;
-      z-index: 999;
+      align-items: center;
+      padding: 10px 16px;
+      background-color: #000;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
     }
 
     .logo img {
-      width: 32px;
-      height: 32px;
-      border-radius: 4px;
+      width: 40px;
+      margin-right: 10px;
     }
 
-    .logo span {
-      font-size: 20px;
-      font-weight: bold;
-      color: #00e5ff;
+    .logo h1 {
+      color: #00f0ff;
+      font-size: 18px;
+      margin: 0;
     }
 
-    .nav-links a {
-      color: #ffffff;
-      margin-left: 20px;
-      text-decoration: none;
-      font-weight: 500;
+    .logo p {
+      font-size: 12px;
+      color: #ccc;
+      margin: 0;
     }
 
-    .nav-links a:hover {
-      color: #00e5ff;
-    }
-
-    .hero-banner img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-    }
-
-    header {
-      padding: 40px 20px 30px;
-    }
-
-    header h1 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 16px;
-      color: #c0c0c0;
-      margin-bottom: 30px;
-    }
-
-    .download-btn {
-      background-color: #2196f3;
+    .menu-btn {
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
       border: none;
       color: white;
-      font-size: 16px;
-      padding: 12px 30px;
-      border-radius: 6px;
-      cursor: pointer;
     }
 
-    .download-btn:hover {
-      background-color: #1976d2;
+    .banner img {
+      width: 100%;
+      height: auto;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 20px;
+    }
+
+    .buttons a {
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .explore {
+      background-color: #00e6c3;
+      color: black;
+    }
+
+    .how {
+      background-color: #ff6f76;
+      color: white;
     }
 
     .section-title {
-      margin-top: 60px;
-      font-size: 24px;
-      font-weight: 700;
-      color: #00e5ff;
+      padding: 0 20px;
+      font-size: 20px;
+      color: #00e6ff;
     }
 
     .view-all {
-      font-size: 14px;
-      color: #00e5ff;
+      padding: 0 20px;
+      color: #00ffb3;
       text-decoration: none;
       display: inline-block;
-      margin-top: 5px;
+      margin-bottom: 10px;
     }
 
-    .games-container {
+    .games {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      padding: 40px 20px;
-      gap: 20px;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 0 20px 20px;
     }
 
     .game-card {
-      background-color: #2c3e50;
-      padding: 20px;
+      background: #1e1e1e;
+      padding: 10px;
       border-radius: 10px;
-      width: 260px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 140px;
+      flex: 0 0 auto;
     }
 
     .game-card img {
       width: 100%;
+      height: auto;
       border-radius: 8px;
     }
 
-    .game-card h3 {
-      font-size: 18px;
-      margin: 10px 0 5px;
-    }
-
-    .game-card p {
-      font-size: 14px;
-      color: #ccc;
-    }
-
-    .how-it-works {
-      padding: 40px 20px;
-      text-align: left;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .how-it-works h2 {
-      color: #00e5ff;
-    }
-
-    .contact-form {
-      padding: 40px 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    .contact-form h2 {
-      color: #00e5ff;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
+    .menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .contact-form button {
-      background-color: #2196f3;
+      height: 100%;
+      background: #1a1a1a;
       color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-
-    .subscribe {
-      padding: 40px 20px;
-      background-color: #1c1c1c;
-    }
-
-    .subscribe h2 {
-      color: #00e5ff;
-    }
-
-    .subscribe input[type="email"] {
-      padding: 10px;
-      width: 300px;
-      max-width: 80%;
-      border-radius: 5px;
-      margin-right: 10px;
-    }
-
-    .subscribe button {
-      background-color: #2196f3;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-
-    footer {
-      background-color: #0f0f0f;
+      flex-direction: column;
       padding: 20px;
-      font-size: 14px;
-      color: #aaa;
+      z-index: 1000;
     }
 
-    footer a {
-      color: #00e5ff;
-      margin: 0 10px;
+    .menu.open {
+      display: flex;
+    }
+
+    .menu input {
+      background: #000;
+      border: none;
+      padding: 10px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      color: white;
+      font-size: 16px;
+    }
+
+    .menu a {
+      padding: 10px 0;
+      color: white;
       text-decoration: none;
+      border-bottom: 1px solid #333;
     }
 
-    footer a:hover {
-      text-decoration: underline;
+    .menu .auth {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .menu .auth a {
+      text-align: center;
+      padding: 10px;
+      border-radius: 25px;
+    }
+
+    .login {
+      border: 1px solid #00f0ff;
+      color: #00f0ff;
+    }
+
+    .register {
+      background: #00f0ff;
+      color: black;
+    }
+
+    .close-btn {
+      align-self: flex-end;
+      font-size: 24px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
-      <span>Onlixe Games</span>
+<header>
+  <div class="logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/3208/3208707.png" alt="logo">
+    <div>
+      <h1>Onlixe Games</h1>
+      <p>Unlock Premium Games</p>
     </div>
-    <div class="nav-links">
-      <a href="#featured-games">Explore</a>
-      <a href="#how-it-works">How It Works</a>
-    </div>
-  </nav>
+  </div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
 
-  <section class="hero-banner">
-    <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Hero Banner">
-  </section>
+<div class="banner">
+  <img src="https://i.ibb.co/98Sfv1G/gaming-banner.jpg" alt="banner" />
+</div>
 
-  <header>
-    <h1>Download Free MOD Games</h1>
-    <p>Onlixe Games is your #1 source for modded Android & iOS games</p>
-    <button class="download-btn">Download Now</button>
-  </header>
+<div class="buttons">
+  <a href="#explore" class="explore">Explore</a>
+  <a href="#how" class="how">How It Works</a>
+</div>
 
-  <section id="featured-games">
-    <h2 class="section-title">Featured Games</h2>
-    <a class="view-all" href="#">View All Games →</a>
-    <div class="games-container">
-      <div class="game-card">
-        <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="BeamNG Drive">
-        <h3>BeamNG.drive Mobile</h3>
-        <p>Version: 0.32.0.0 | Rating: 4.6</p>
-      </div>
-      <div class="game-card">
-        <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="GTA V">
-        <h3>GTA V Mobile</h3>
-        <p>Version: 1.68 | Rating: 4.9</p>
-      </div>
-      <div class="game-card">
-        <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Fortnite">
-        <h3>Fortnite Mobile</h3>
-        <p>Version: Latest | Rating: 4.7</p>
-      </div>
-    </div>
-  </section>
+<h2 class="section-title">Featured Games</h2>
+<a href="#view-all" class="view-all">View All Games →</a>
 
-  <section id="how-it-works" class="how-it-works">
-    <h2>How It Works</h2>
-    <p>1. Choose your game</p>
-    <p>2. Complete short offer</p>
-    <p>3. Download & enjoy premium features!</p>
-  </section>
+<div class="games">
+  <div class="game-card">
+    <img src="https://play-lh.googleusercontent.com/x4m1pJj9RxR4_XbWgzTYjWy4Mo7VgbZOUXLHJphX5vDKAMHEK8IlYpTx_JwzT7rYPA=w240-h480-rw" alt="BeamNG">
+    <p>BeamNG.drive Mobile</p>
+  </div>
+  <div class="game-card">
+    <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA V">
+    <p>Grand Theft Auto V</p>
+  </div>
+</div>
 
-  <section class="contact-form">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+<div class="menu" id="menu">
+  <span class="close-btn" onclick="toggleMenu()">✖</span>
+  <input type="text" placeholder="Search...">
+  <a href="#">Home</a>
+  <a href="#">Games</a>
+  <a href="#">Trending</a>
+  <a href="#">Blog</a>
+  <div class="auth">
+    <a href="#" class="login">Login</a>
+    <a href="#" class="register">Register</a>
+  </div>
+</div>
 
-  <section class="subscribe">
-    <h2>Subscribe for Updates</h2>
-    <p>Be the first to get new MOD releases</p>
-    <input type="email" placeholder="Your Email">
-    <button>Subscribe</button>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Onlixe Games. All rights reserved.</p>
-    <p>
-      <a href="#">Home</a> |
-      <a href="#">Games</a> |
-      <a href="#">Contact</a> |
-      <a href="#">Terms</a>
-    </p>
-  </footer>
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
