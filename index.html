@@ -10,16 +10,16 @@
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
-      background: #f9fbfc;
-      color: #222;
+      background: #f8fafc;
+      color: #232a34;
     }
     .navbar {
       background: #fff;
-      border-bottom: 1px solid #e6eef5;
+      border-bottom: 1px solid #e0e3ea;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 40px;
+      padding: 16px 32px;
       position: sticky;
       top: 0;
       z-index: 99;
@@ -30,304 +30,376 @@
       gap: 10px;
     }
     .logo img {
-      width: 36px;
-      height: 36px;
-      border-radius: 6px;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
     }
     .logo span {
       font-size: 22px;
       font-weight: 700;
-      color: #0787ea;
+      color: #2196f3;
       letter-spacing: 1px;
     }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+    }
     .nav-links a {
-      color: #222;
+      color: #232a34;
       text-decoration: none;
       font-weight: 500;
-      margin: 0 16px;
       font-size: 16px;
       transition: color 0.2s;
+      padding: 6px 12px;
+      border-radius: 5px;
     }
     .nav-links a:hover {
-      color: #0787ea;
+      background: #e3f2fd;
+      color: #1976d2;
     }
     .header-cta {
-      background: #0787ea;
+      background: #2196f3;
       color: #fff;
-      padding: 10px 28px;
+      padding: 9px 22px;
       border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
-      margin-left: 24px;
+      margin-left: 18px;
       transition: background 0.2s;
     }
     .header-cta:hover {
-      background: #005fa3;
+      background: #1769aa;
     }
     .hero-section {
-      background: linear-gradient(120deg, #e5f1fa 60%, #e3f6fc 100%);
-      padding: 70px 0 40px 0;
+      background: linear-gradient(120deg, #e3f2fd 60%, #bbdefb 100%);
+      padding: 70px 0 25px 0;
       text-align: center;
     }
     .hero-section h1 {
-      font-size: 42px;
+      font-size: 36px;
       font-weight: 800;
-      color: #222;
+      color: #232a34;
       margin-bottom: 18px;
       line-height: 1.1;
     }
     .hero-section p {
       font-size: 20px;
-      color: #555;
+      color: #4b5563;
       margin-bottom: 30px;
       max-width: 540px;
       margin-left: auto;
       margin-right: auto;
     }
     .main-cta {
-      background: #0787ea;
+      background: #2196f3;
       color: #fff;
-      padding: 16px 38px;
+      padding: 13px 34px;
       border-radius: 10px;
       font-weight: 700;
-      font-size: 19px;
+      font-size: 18px;
       text-decoration: none;
-      box-shadow: 0 4px 24px #0787ea28;
+      box-shadow: 0 4px 24px #2196f328;
       transition: background 0.2s;
       display: inline-block;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
     .main-cta:hover {
-      background: #005fa3;
+      background: #1769aa;
     }
     .hero-img {
       margin: 0 auto;
       display: block;
-      width: 320px;
+      width: 300px;
+      max-width: 90vw;
       border-radius: 20px;
-      box-shadow: 0 8px 24px #0787ea22;
-      margin-top: 30px;
+      box-shadow: 0 8px 24px #1976d211;
+      margin-top: 28px;
     }
-    .features-section {
-      padding: 65px 0 20px 0;
+
+    /* ألعاب */
+    .games-section {
+      padding: 55px 0 25px 0;
       background: #fff;
     }
-    .features-title {
+    .section-title {
+      color: #2196f3;
       font-size: 28px;
-      color: #0787ea;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 32px;
+    }
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto 12px auto;
+      padding: 0 12px;
+    }
+    .game-card {
+      background: #f3f8fa;
+      border-radius: 14px;
+      overflow: hidden;
+      padding: 17px 8px 13px 8px;
+      box-shadow: 0 4px 12px #2196f315;
+      transition: transform 0.18s;
+      text-align: center;
+      color: #232a34;
+    }
+    .game-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 10px 32px #2196f32a;
+    }
+    .game-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      object-fit: cover;
+      background: #fff;
+      box-shadow: 0 2px 8px #2196f319;
+    }
+    .game-card h3 {
+      font-size: 15.5px;
+      margin: 5px 0 2px 0;
+      font-weight: 700;
+      color: #1976d2;
+    }
+    .game-card .version {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 3px;
+    }
+    .stars {
+      color: #ffb300;
+      font-size: 13px;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    /* الميزات */
+    .features-section {
+      padding: 50px 0 25px 0;
+      background: #f8fafc;
+    }
+    .features-title {
+      font-size: 26px;
+      color: #1976d2;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 34px;
     }
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 22px;
       max-width: 900px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 20px auto;
+      padding: 0 12px;
     }
     .feature-card {
-      background: #f3f8fa;
+      background: #fff;
       border-radius: 12px;
-      padding: 32px 24px;
+      padding: 26px 16px 22px 16px;
       text-align: center;
-      box-shadow: 0 2px 12px #0787ea11;
+      box-shadow: 0 2px 12px #2196f111;
       transition: box-shadow 0.2s;
     }
     .feature-card:hover {
-      box-shadow: 0 6px 32px #0787ea22;
+      box-shadow: 0 6px 32px #2196f122;
     }
     .feature-icon {
-      font-size: 36px;
-      margin-bottom: 18px;
-      color: #0787ea;
+      font-size: 32px;
+      margin-bottom: 13px;
+      color: #2196f3;
     }
     .feature-card h3 {
-      margin: 0 0 10px 0;
-      color: #222;
-      font-size: 20px;
+      margin: 0 0 8px 0;
+      color: #23395d;
+      font-size: 18px;
       font-weight: 700;
     }
     .feature-card p {
       color: #555;
-      font-size: 15px;
+      font-size: 14px;
     }
-    .pricing-section {
-      background: #f9fbfc;
-      padding: 65px 0 35px 0;
-    }
-    .pricing-title {
-      text-align: center;
-      color: #0787ea;
-      font-size: 28px;
-      font-weight: 700;
-      margin-bottom: 38px;
-    }
-    .pricing-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-    .pricing-card {
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px #0787ea11;
-      padding: 32px 24px;
-      text-align: center;
-      width: 270px;
-      transition: box-shadow 0.2s;
-    }
-    .pricing-card:hover {
-      box-shadow: 0 8px 32px #0787ea22;
-    }
-    .pricing-card h3 {
-      font-size: 20px;
-      color: #222;
-      margin-bottom: 8px;
-    }
-    .pricing-card .price {
-      font-size: 28px;
-      color: #0787ea;
-      font-weight: 800;
-      margin: 10px 0;
-    }
-    .pricing-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 18px 0 18px 0;
-      color: #555;
-      font-size: 15px;
-      text-align: left;
-      line-height: 1.6;
-    }
-    .pricing-card .pricing-cta {
-      background: #0787ea;
-      color: #fff;
-      padding: 10px 0;
-      width: 100%;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      display: block;
-      margin-top: 18px;
-      transition: background 0.2s;
-    }
-    .pricing-card .pricing-cta:hover {
-      background: #005fa3;
-    }
+
+    /* كيف يعمل */
     .how-section {
       background: #fff;
-      padding: 60px 0 20px 0;
+      padding: 50px 0 20px 0;
     }
     .how-title {
-      color: #0787ea;
-      font-size: 28px;
+      color: #1976d2;
+      font-size: 26px;
       font-weight: 700;
       text-align: center;
-      margin-bottom: 38px;
+      margin-bottom: 28px;
     }
     .how-steps {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 24px;
+      gap: 22px;
       max-width: 900px;
       margin: 0 auto 0 auto;
+      padding: 0 12px;
     }
     .how-step {
       background: #f3f8fa;
       border-radius: 12px;
-      padding: 28px 20px;
+      padding: 22px 10px;
       text-align: center;
-      width: 200px;
-      box-shadow: 0 2px 12px #0787ea11;
+      width: 170px;
+      box-shadow: 0 2px 12px #2196f111;
     }
     .how-step .icon {
-      font-size: 32px;
-      margin-bottom: 15px;
-      color: #0787ea;
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #2196f3;
     }
     .how-step h4 {
-      font-size: 17px;
+      font-size: 15.5px;
       color: #222;
       margin-bottom: 7px;
       font-weight: 700;
     }
     .how-step p {
       color: #555;
-      font-size: 14px;
+      font-size: 13px;
       margin: 0;
     }
+
+    /* تواصل */
     .contact-section {
-      background: #f9fbfc;
-      padding: 55px 0 25px 0;
+      background: #f8fafc;
+      padding: 40px 0 18px 0;
       text-align: center;
     }
     .contact-section h2 {
-      color: #0787ea;
-      font-size: 28px;
+      color: #2196f3;
+      font-size: 25px;
       font-weight: 700;
-      margin-bottom: 28px;
+      margin-bottom: 18px;
     }
     .contact-form {
       display: inline-block;
       background: #fff;
-      padding: 32px 28px;
+      padding: 24px 18px;
       border-radius: 14px;
-      box-shadow: 0 4px 16px #0787ea11;
-      max-width: 400px;
+      box-shadow: 0 4px 16px #2196f111;
+      max-width: 340px;
       width: 100%;
       text-align: left;
     }
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
+      margin-bottom: 12px;
+      padding: 9px;
       border: 1px solid #e3e8ee;
       border-radius: 7px;
-      font-size: 15px;
-      background: #f9fbfc;
-      color: #222;
+      font-size: 14px;
+      background: #f8fafc;
+      color: #232a34;
       resize: none;
       font-family: inherit;
       box-sizing: border-box;
     }
     .contact-form button {
-      background: #0787ea;
+      background: #2196f3;
       color: #fff;
       border: none;
-      padding: 12px 0;
+      padding: 11px 0;
       border-radius: 8px;
       width: 100%;
-      font-size: 17px;
+      font-size: 15px;
       font-weight: bold;
       cursor: pointer;
       margin-top: 8px;
       transition: background 0.2s;
     }
     .contact-form button:hover {
-      background: #005fa3;
+      background: #1769aa;
     }
     footer {
       background: #fff;
-      padding: 30px 8px;
+      padding: 18px 8px;
       color: #888;
-      font-size: 15px;
+      font-size: 14px;
       text-align: center;
-      border-top: 1px solid #e6eef5;
+      border-top: 1px solid #e0e3ea;
       margin-top: 30px;
     }
     footer a {
-      color: #0787ea;
-      margin: 0 8px;
+      color: #2196f3;
+      margin: 0 6px;
       text-decoration: none;
       font-weight: 500;
+      font-size: 14px;
     }
     footer a:hover {
       text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 850px) {
+      .games-grid, .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+      .how-steps {
+        gap: 12px;
+      }
+      .navbar {
+        padding: 12px 8px;
+      }
+      .hero-section h1 {
+        font-size: 27px;
+      }
+    }
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 4vw;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+      .hero-section {
+        padding: 35px 0 12px 0;
+      }
+      .hero-section h1 {
+        font-size: 20px;
+      }
+      .hero-section p {
+        font-size: 13px;
+      }
+      .hero-img {
+        width: 90vw;
+        margin-top: 14px;
+      }
+      .games-section, .features-section, .how-section, .contact-section {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .games-grid, .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+        padding: 0 2vw;
+      }
+      .how-steps {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .how-step, .feature-card {
+        width: 100%;
+      }
+      .contact-form {
+        padding: 13px 6px;
+      }
     }
   </style>
 </head>
@@ -339,9 +411,9 @@
       <span>Onlixe Games</span>
     </div>
     <div class="nav-links">
+      <a href="#games">Games</a>
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </div>
     <a class="header-cta" href="#contact">Get Started</a>
@@ -349,10 +421,53 @@
 
   <!-- HERO -->
   <section class="hero-section">
-    <h1>The Best MOD Games Hub</h1>
-    <p>Get access to the latest and most popular MOD games, fast downloads, and a seamless experience with Onlixe Games.</p>
-    <a class="main-cta" href="#pricing">Start Now</a>
+    <h1>MOD Games for Everyone</h1>
+    <p>Access the best MOD games with high speed, security and a beautiful experience. No limits, no ads!</p>
+    <a class="main-cta" href="#games">Explore Games</a>
     <img class="hero-img" src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Hero Banner">
+  </section>
+
+  <!-- GAMES -->
+  <section class="games-section" id="games">
+    <div class="section-title">Featured Games</div>
+    <div class="games-grid">
+      <div class="game-card">
+        <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="BeamNG.drive Mobile">
+        <h3>BeamNG.drive Mobile</h3>
+        <div class="version">v0.32.0.0</div>
+        <div class="stars">★★★★★ 4.6</div>
+      </div>
+      <div class="game-card">
+        <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="GTA V">
+        <h3>Grand Theft Auto V</h3>
+        <div class="version">v1.0.3095/1.68</div>
+        <div class="stars">★★★★★ 4.9</div>
+      </div>
+      <div class="game-card">
+        <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Assetto Corsa">
+        <h3>Assetto Corsa Mobile</h3>
+        <div class="version">v1.16.4</div>
+        <div class="stars">★★★★★ 4.8</div>
+      </div>
+      <div class="game-card">
+        <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Forza Horizon 5">
+        <h3>Forza Horizon 5 Mobile</h3>
+        <div class="version">v1.656.386.0</div>
+        <div class="stars">★★★★★ 5.0</div>
+      </div>
+      <div class="game-card">
+        <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Minecraft PE">
+        <h3>Minecraft Pocket Edition</h3>
+        <div class="version">v1.20.41</div>
+        <div class="stars">★★★★★ 4.7</div>
+      </div>
+      <div class="game-card">
+        <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="PUBG Mobile MOD">
+        <h3>PUBG Mobile MOD</h3>
+        <div class="version">v3.1.0</div>
+        <div class="stars">★★★★★ 4.5</div>
+      </div>
+    </div>
   </section>
 
   <!-- FEATURES -->
@@ -362,7 +477,7 @@
       <div class="feature-card">
         <div class="feature-icon">⚡</div>
         <h3>Fast Downloads</h3>
-        <p>Enjoy super-fast downloads for all your favorite games, anytime.</p>
+        <p>Super-fast downloads for all your favorite games.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🔒</div>
@@ -372,45 +487,7 @@
       <div class="feature-card">
         <div class="feature-icon">🎮</div>
         <h3>Wide Variety</h3>
-        <p>A huge and constantly updated collection of MOD games.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing-section" id="pricing">
-    <div class="pricing-title">Pricing Plans</div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <div class="price">$0<span style="font-size:15px;color:#555;font-weight:400;">/month</span></div>
-        <ul>
-          <li>Free MOD downloads</li>
-          <li>Standard Speed</li>
-          <li>Community Support</li>
-        </ul>
-        <a href="#contact" class="pricing-cta">Choose Basic</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Pro</h3>
-        <div class="price">$5<span style="font-size:15px;color:#555;font-weight:400;">/month</span></div>
-        <ul>
-          <li>All Basic features</li>
-          <li>High-Speed Downloads</li>
-          <li>No Ads</li>
-          <li>Pro Support</li>
-        </ul>
-        <a href="#contact" class="pricing-cta">Choose Pro</a>
-      </div>
-      <div class="pricing-card">
-        <h3>Premium</h3>
-        <div class="price">$10<span style="font-size:15px;color:#555;font-weight:400;">/month</span></div>
-        <ul>
-          <li>All Pro features</li>
-          <li>Exclusive MODs</li>
-          <li>VIP Support</li>
-        </ul>
-        <a href="#contact" class="pricing-cta">Choose Premium</a>
+        <p>Huge and updated collection of MOD games.</p>
       </div>
     </div>
   </section>
@@ -432,7 +509,7 @@
       <div class="how-step">
         <div class="icon">🔓</div>
         <h4>Install Easily</h4>
-        <p>Simple instructions for hassle-free install.</p>
+        <p>Simple instructions for easy install.</p>
       </div>
       <div class="how-step">
         <div class="icon">🎮</div>
@@ -456,10 +533,9 @@
   <!-- FOOTER -->
   <footer>
     &copy; 2025 Onlixe Games. All rights reserved. &mdash;
-    <a href="#">Home</a>
+    <a href="#games">Games</a>
     <a href="#features">Features</a>
     <a href="#how">How it works</a>
-    <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
   </footer>
 </body>
