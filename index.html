@@ -7,27 +7,11 @@
   <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(to bottom, #0d1b2a, #1b263b);
       color: #ffffff;
-      overflow-x: hidden;
-    }
-
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .navbar {
@@ -60,10 +44,15 @@
       color: #00e5ff;
     }
 
+    .hero {
+      position: relative;
+    }
+
     .hero img {
       width: 100%;
       max-height: 400px;
       object-fit: cover;
+      display: block;
     }
 
     .hero-buttons {
@@ -80,12 +69,10 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease, transform 0.3s ease;
     }
 
     .hero-buttons a:hover {
       background-color: #1976d2;
-      transform: scale(1.05);
     }
 
     .section-title {
@@ -121,11 +108,6 @@
       border-radius: 10px;
       width: 260px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .game-card:hover {
-      transform: scale(1.03);
     }
 
     .game-card img {
@@ -143,7 +125,7 @@
       color: #ccc;
     }
 
-    /* HOW IT WORKS SECTION */
+    /* HOW IT WORKS SECTION STYLE */
     .how-it-works {
       padding: 40px 20px;
       max-width: 1000px;
@@ -168,22 +150,11 @@
       border-radius: 10px;
       text-align: center;
       box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .how-box:hover {
-      transform: translateY(-5px);
     }
 
     .how-box .icon {
       font-size: 40px;
       margin-bottom: 10px;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
     }
 
     .how-box h3 {
@@ -227,12 +198,6 @@
       padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact-form button:hover,
-    .subscribe button:hover {
-      background-color: #1976d2;
     }
 
     .subscribe {
@@ -257,6 +222,7 @@
     footer a:hover {
       text-decoration: underline;
     }
+
   </style>
 </head>
 <body>
@@ -272,15 +238,15 @@
     <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Hero Banner">
   </section>
 
-  <div class="hero-buttons fade-in">
+  <div class="hero-buttons">
     <a href="#explore">Explore</a>
     <a href="#how-it-works">How It Works</a>
   </div>
 
-  <h2 class="section-title fade-in">Featured Games</h2>
-  <div class="view-all fade-in"><a href="#">View All Games →</a></div>
+  <h2 class="section-title">Featured Games</h2>
+  <div class="view-all"><a href="#">View All Games →</a></div>
 
-  <div class="games-container fade-in">
+  <div class="games-container">
     <div class="game-card">
       <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="BeamNG Drive">
       <h3>BeamNG.drive Mobile</h3>
@@ -298,7 +264,7 @@
     </div>
   </div>
 
-  <section id="how-it-works" class="how-it-works fade-in">
+  <section id="how-it-works" class="how-it-works">
     <h2>How It Works</h2>
     <div class="how-it-works-grid">
       <div class="how-box">
@@ -319,7 +285,7 @@
     </div>
   </section>
 
-  <section class="contact-form fade-in">
+  <section class="contact-form">
     <h2>Contact Us</h2>
     <form>
       <input type="text" placeholder="Your Name" required />
@@ -329,7 +295,7 @@
     </form>
   </section>
 
-  <section class="subscribe fade-in">
+  <section class="subscribe">
     <h2>Subscribe for Updates</h2>
     <p>Be the first to get new MOD releases</p>
     <input type="email" placeholder="Your Email">
@@ -345,21 +311,6 @@
       <a href="#">Terms</a>
     </p>
   </footer>
-
-  <script>
-    // Scroll fade-in effect
-    const fadeEls = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    fadeEls.forEach(el => observer.observe(el));
-  </script>
 
 </body>
 </html>
