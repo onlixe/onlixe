@@ -7,6 +7,10 @@
   <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -42,6 +46,17 @@
     .logo span {
       font-size: 20px;
       font-weight: bold;
+      color: #00e5ff;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
       color: #00e5ff;
     }
 
@@ -86,6 +101,14 @@
       font-size: 24px;
       font-weight: 700;
       color: #00e5ff;
+    }
+
+    .view-all {
+      font-size: 14px;
+      color: #00e5ff;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 5px;
     }
 
     .games-container {
@@ -207,6 +230,10 @@
       <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
       <span>Onlixe Games</span>
     </div>
+    <div class="nav-links">
+      <a href="#featured-games">Explore</a>
+      <a href="#how-it-works">How It Works</a>
+    </div>
   </nav>
 
   <section class="hero-banner">
@@ -219,26 +246,29 @@
     <button class="download-btn">Download Now</button>
   </header>
 
-  <h2 class="section-title">Featured Games</h2>
-  <div class="games-container">
-    <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="BeamNG Drive">
-      <h3>BeamNG.drive Mobile</h3>
-      <p>Version: 0.32.0.0 | Rating: 4.6</p>
+  <section id="featured-games">
+    <h2 class="section-title">Featured Games</h2>
+    <a class="view-all" href="#">View All Games →</a>
+    <div class="games-container">
+      <div class="game-card">
+        <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="BeamNG Drive">
+        <h3>BeamNG.drive Mobile</h3>
+        <p>Version: 0.32.0.0 | Rating: 4.6</p>
+      </div>
+      <div class="game-card">
+        <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="GTA V">
+        <h3>GTA V Mobile</h3>
+        <p>Version: 1.68 | Rating: 4.9</p>
+      </div>
+      <div class="game-card">
+        <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Fortnite">
+        <h3>Fortnite Mobile</h3>
+        <p>Version: Latest | Rating: 4.7</p>
+      </div>
     </div>
-    <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="GTA V">
-      <h3>GTA V Mobile</h3>
-      <p>Version: 1.68 | Rating: 4.9</p>
-    </div>
-    <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Fortnite">
-      <h3>Fortnite Mobile</h3>
-      <p>Version: Latest | Rating: 4.7</p>
-    </div>
-  </div>
+  </section>
 
-  <section class="how-it-works">
+  <section id="how-it-works" class="how-it-works">
     <h2>How It Works</h2>
     <p>1. Choose your game</p>
     <p>2. Complete short offer</p>
