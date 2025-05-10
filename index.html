@@ -125,67 +125,59 @@
       color: #ccc;
     }
 
-   /* تنسيق عنوان القسم */
+/* حاوية القسم */
 .how-it-works {
-  text-align: center;
-  padding: 40px 20px;
   background-color: #0a0a0a;
+  padding: 40px 20px;
+  text-align: center;
 }
 
+/* العنوان */
 .how-it-works h2 {
   color: #00e0ff;
   font-size: 28px;
   margin-bottom: 30px;
 }
 
-/* تنسيق مربعات الخطوات */
+/* شبكة المربعات */
 .steps {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
 }
 
-/* تنسيق كل مربع */
+/* كل مربع */
 .step {
   background-color: #1a1a1a;
   border-radius: 12px;
   padding: 25px 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
-/* تنسيق الأيقونة */
+.step:hover {
+  transform: scale(1.03);
+}
+
+/* أيقونة */
 .step .icon {
   font-size: 36px;
   margin-bottom: 15px;
 }
 
-/* العنوان داخل كل مربع */
+/* العنوان الفرعي */
 .step h3 {
   color: #00e0ff;
   font-size: 20px;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
-/* الوصف داخل كل مربع */
+/* الوصف */
 .step p {
-  font-size: 15px;
   color: #cfcfcf;
+  font-size: 15px;
   margin: 0;
-}
-
-/* جعل المربعات جنب بعض على الشاشات الكبيرة */
-@media (min-width: 768px) {
-  .steps {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .step {
-    flex: 0 0 45%;
-    max-width: 300px;
-  }
 }
 
 
