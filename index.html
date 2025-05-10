@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Onlixe Games - MOD Games Hub</title>
+  <title>Onlixe Games - Download Free MOD Games</title>
   <link rel="icon" href="https://i.postimg.cc/7LWVT2DY/bbck.jpg" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -12,6 +12,7 @@
       font-family: 'Roboto', sans-serif;
       background: linear-gradient(to bottom, #0d1b2a, #1b263b);
       color: #ffffff;
+      text-align: center;
     }
 
     .navbar {
@@ -20,10 +21,9 @@
       justify-content: space-between;
       padding: 15px 30px;
       background-color: #0d1b2a;
-      border-bottom: 1px solid #1b263b;
       position: sticky;
       top: 0;
-      z-index: 999;
+      z-index: 1000;
     }
 
     .logo {
@@ -44,35 +44,43 @@
       color: #00e5ff;
     }
 
-    .hero {
-      position: relative;
-    }
-
-    .hero img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .hero-buttons {
+    .nav-links {
       display: flex;
-      justify-content: center;
       gap: 20px;
-      margin-top: 20px;
     }
 
-    .hero-buttons a {
-      background-color: #2196f3;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
+    .nav-links a {
+      color: #00e5ff;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .hero-buttons a:hover {
-      background-color: #1976d2;
+    .hero-banner {
+      position: relative;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    .hero-buttons {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+    }
+
+    .hero-buttons a {
+      background-color: #2196f3;
+      padding: 12px 24px;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .section-title {
@@ -80,18 +88,6 @@
       font-size: 24px;
       font-weight: 700;
       color: #00e5ff;
-      text-align: center;
-    }
-
-    .view-all {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .view-all a {
-      color: #00e5ff;
-      text-decoration: none;
-      font-weight: bold;
     }
 
     .games-container {
@@ -125,27 +121,66 @@
       color: #ccc;
     }
 
-    .how-it-works,
-    .contact-form,
-    .subscribe {
+    .view-all {
+      margin: 20px;
+    }
+
+    .view-all a {
+      color: #00e5ff;
+      text-decoration: none;
+    }
+
+    .how-it-works {
+      background-color: #14213d;
+      padding: 60px 20px;
+    }
+
+    .how-it-works h2 {
+      font-size: 26px;
+      color: #00e5ff;
+      margin-bottom: 40px;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      max-width: 220px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .step img {
+      width: 60px;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      color: #ffffff;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .step p {
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    .contact-form, .subscribe {
       padding: 40px 20px;
-      max-width: 800px;
+      max-width: 600px;
       margin: auto;
     }
 
-    .how-it-works h2,
-    .contact-form h2,
-    .subscribe h2 {
+    .contact-form h2, .subscribe h2 {
       color: #00e5ff;
-      text-align: center;
     }
 
-    .how-it-works p {
-      text-align: center;
-    }
-
-    .contact-form input,
-    .contact-form textarea,
+    .contact-form input, .contact-form textarea,
     .subscribe input[type="email"] {
       width: 100%;
       padding: 10px;
@@ -154,19 +189,16 @@
       border-radius: 5px;
     }
 
-    .contact-form button,
-    .subscribe button {
+    .contact-form button, .subscribe button {
       background-color: #2196f3;
       color: white;
       border: none;
       padding: 10px 20px;
       border-radius: 5px;
-      cursor: pointer;
     }
 
     .subscribe {
       background-color: #1c1c1c;
-      text-align: center;
     }
 
     footer {
@@ -174,7 +206,6 @@
       padding: 20px;
       font-size: 14px;
       color: #aaa;
-      text-align: center;
     }
 
     footer a {
@@ -195,43 +226,61 @@
       <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Onlixe Icon">
       <span>Onlixe Games</span>
     </div>
+    <div class="nav-links">
+      <a href="#explore">Explore</a>
+      <a href="#how">How It Works</a>
+    </div>
   </nav>
 
-  <section class="hero">
+  <section class="hero-banner">
     <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Hero Banner">
+    <div class="hero-buttons">
+      <a href="#explore">Explore</a>
+      <a href="#how">How It Works</a>
+    </div>
   </section>
 
-  <div class="hero-buttons">
-    <a href="#explore">Explore</a>
-    <a href="#how-it-works">How It Works</a>
-  </div>
-
-  <h2 class="section-title">Featured Games</h2>
-  <div class="view-all"><a href="#">View All Games →</a></div>
-
+  <h2 class="section-title" id="explore">Featured Games</h2>
   <div class="games-container">
     <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="BeamNG Drive">
+      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Game">
       <h3>BeamNG.drive Mobile</h3>
       <p>Version: 0.32.0.0 | Rating: 4.6</p>
     </div>
     <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="GTA V">
+      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Game">
       <h3>GTA V Mobile</h3>
       <p>Version: 1.68 | Rating: 4.9</p>
     </div>
     <div class="game-card">
-      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Fortnite">
+      <img src="https://i.postimg.cc/7LWVT2DY/bbck.jpg" alt="Game">
       <h3>Fortnite Mobile</h3>
       <p>Version: Latest | Rating: 4.7</p>
     </div>
   </div>
+  <div class="view-all">
+    <a href="#">View All Games →</a>
+  </div>
 
-  <section id="how-it-works" class="how-it-works">
+  <section class="how-it-works" id="how">
     <h2>How It Works</h2>
-    <p>1. Choose your game</p>
-    <p>2. Complete short offer</p>
-    <p>3. Download & enjoy premium features!</p>
+    <div class="steps">
+      <div class="step">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Choose Game">
+        <h3>Choose Game</h3>
+        <p>Pick your favorite MOD game from our huge collection.</p>
+      </div>
+      <div class="step">
+        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077042.png" alt="Complete Offer">
+        <h3>Complete Offer</h3>
+        <p>Complete a quick verification to unlock download.</p>
+      </div>
+      <div class="step">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" alt="Enjoy">
+        <h3>Download & Enjoy</h3>
+        <p>Start playing with all premium features unlocked!</p>
+      </div>
+    </div>
   </section>
 
   <section class="contact-form">
@@ -263,4 +312,3 @@
 
 </body>
 </html>
-
