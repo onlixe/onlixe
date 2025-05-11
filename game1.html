@@ -1,17 +1,84 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Minecraft</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      direction: ltr;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      box-shadow: 0 4px 16px #0001;
+      padding: 30px 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .game-img {
+      width: 260px;
+      max-width: 90%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px #0002;
+    }
+    h1 {
+      margin: 10px 0 20px 0;
+      font-size: 2.2em;
+      color: #0a5a9c;
+    }
+    .desc {
+      font-size: 1.13em;
+      color: #444;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #1abc9c;
+      color: #fff;
+      padding: 15px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.15em;
+      font-weight: bold;
+      transition: background 0.2s;
+      box-shadow: 0 2px 6px #0001;
+      margin-top: 10px;
+    }
+    .download-btn:hover {
+      background: #159d82;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: #0a5a9c;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: #1abc9c;
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">الصفحة الرئيسية</a>
-  </nav>
-  <h1>Minecraft</h1>
-  <img src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Minecraft">
-  <p>وصف اللعبة هنا...</p>
-  <a href="رابط-تحميل-اللعبة" download>تحميل اللعبة</a>
+  <div class="container">
+    <a class="back-link" href="index.html">&larr; Back to Home</a>
+    <img class="game-img" src="images/game1.jpg" alt="Minecraft">
+    <h1>Minecraft</h1>
+    <div class="desc">
+      Enjoy the thrill and adventure of <strong>Minecraft</strong>!  
+      Experience stunning graphics, various levels, and exciting challenges.  
+      Perfect for all ages, this game guarantees hours of fun and smooth controls for an immersive experience.  
+      Don’t miss out—download the game now and start your adventure!
+    </div>
+    <a class="download-btn" href="YOUR-DOWNLOAD-LINK-HERE" download>Download Game</a>
+  </div>
 </body>
 </html>
