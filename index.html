@@ -681,6 +681,51 @@ footer a:hover {
 .games-grid .game-card a h3:hover {
   text-decoration: none !important;
 }
+    .how-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  justify-items: center;
+}
+
+.how-step {
+  background: #f3f8fa;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #2196f315;
+  padding: 20px 8px 14px 8px;
+  text-align: center;
+  color: #232a34;
+  width: 100%;
+  min-width: 120px;
+  max-width: 200px;
+  margin: 0 auto;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.how-step:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 32px #2196f32a;
+}
+    @media (max-width: 600px) {
+  .how-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .how-step {
+    max-width: 97vw;
+    min-width: 48vw;
+    padding: 14px 2vw 10px 2vw;
+  }
+}
+@media (max-width: 400px) {
+  .how-steps {
+    grid-template-columns: 1fr;
+  }
+  .how-step {
+    max-width: 98vw;
+    min-width: 90vw;
+  }
+}
     
     </style>
 </head>
