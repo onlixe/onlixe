@@ -506,6 +506,76 @@ body {
   text-align: center;
   margin-bottom: 28px;
 }
+     .how-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+.how-step {
+  background: #f3f8fa;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px #2196f315;
+  padding: 24px 10px 18px 10px;
+  text-align: center;
+  color: #232a34;
+  width: 100%;
+  min-width: 120px;
+  max-width: 190px;
+  margin: 0 auto;
+  transition: transform 0.18s, box-shadow 0.18s;
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+}
+
+.how-step:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 32px #2196f32a;
+}
+
+.how-step .icon {
+  font-size: 38px;
+  color: #2196f3;
+  margin-bottom: 13px;
+}
+
+.how-step h4 {
+  color: #2196f3;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.how-step p {
+  color: #555;
+  font-size: 14px;
+  margin: 0;
+}
+    @media (max-width: 600px) {
+  .how-steps {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    max-width: 98vw;
+  }
+  .how-step {
+    max-width: 98vw;
+    min-width: 47vw;
+    padding: 14px 2vw 10px 2vw;
+  }
+}
+@media (max-width: 400px) {
+  .how-steps {
+    grid-template-columns: 1fr;
+  }
+  .how-step {
+    max-width: 99vw;
+    min-width: 90vw;
+  }
+}
 
 
 /* ======================= */
@@ -648,76 +718,6 @@ footer a:hover {
 .games-grid .game-card a h3,
 .games-grid .game-card a h3:hover {
   text-decoration: none !important;
-}
-    .how-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
-  justify-items: center;
-  margin: 0 auto;
-  max-width: 880px;
-}
-
-.how-step {
-  background: #f3f8fa;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px #2196f315;
-  padding: 24px 10px 18px 10px;
-  text-align: center;
-  color: #232a34;
-  width: 100%;
-  min-width: 120px;
-  max-width: 190px;
-  margin: 0 auto;
-  transition: transform 0.18s, box-shadow 0.18s;
-  display: grid;
-  flex-direction: column;
-  align-items: center;
-}
-
-.how-step:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 32px #2196f32a;
-}
-
-.how-step .icon {
-  font-size: 38px;
-  color: #2196f3;
-  margin-bottom: 13px;
-}
-
-.how-step h4 {
-  color: #2196f3;
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 7px;
-}
-
-.how-step p {
-  color: #555;
-  font-size: 14px;
-  margin: 0;
-}
-    @media (max-width: 600px) {
-  .how-steps {
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    max-width: 98vw;
-  }
-  .how-step {
-    max-width: 98vw;
-    min-width: 47vw;
-    padding: 14px 2vw 10px 2vw;
-  }
-}
-@media (max-width: 400px) {
-  .how-steps {
-    grid-template-columns: 1fr;
-  }
-  .how-step {
-    max-width: 99vw;
-    min-width: 90vw;
-  }
 }
     
     </style>
