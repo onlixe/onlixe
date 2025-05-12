@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Fire - تحميل لعبة فري فاير مجانًا</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تحميل لعبة Free Fire الأصلية مجانًا مع شرح الميزات وروابط مباشرة.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+      background: #f7fafd;
+      color: #222;
+      margin: 0;
+    }
+    .container {
+      max-width: 480px;
+      margin: 40px auto;
+      background: #fff;
+      box-shadow: 0 6px 32px #2196f122;
+      border-radius: 18px;
+      padding: 28px 22px 18px 22px;
+      position: relative;
+      text-align: center;
+    }
+    .game-image {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      margin-bottom: 18px;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px #2196f12a;
+      border: 2px solid #eee;
+    }
+    .game-title {
+      font-size: 2.1rem;
+      font-weight: bold;
+      color: #2196f3;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    .game-version {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+    .desc {
+      color: #444;
+      font-size: 1.1rem;
+      margin: 12px 0 20px 0;
+      line-height: 1.7;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #2196f3;
+      color: #fff;
+      padding: 13px 35px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+      box-shadow: 0 4px 18px #2196f328;
+      transition: background 0.2s;
+      margin-bottom: 12px;
+    }
+    .download-btn:hover {
+      background: #1769aa;
+    }
+    .details-list {
+      text-align: right;
+      color: #666;
+      margin: 16px auto 10px auto;
+      padding: 0 6%;
+      font-size: 1rem;
+      direction: rtl;
+    }
+    .details-list li {
+      margin-bottom: 6px;
+      list-style: disc inside;
+    }
+    .back-link {
+      display: block;
+      margin: 18px auto 0 auto;
+      color: #2196f3;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #1769aa; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://play-lh.googleusercontent.com/SYwqQnVjE0zv1q8rV8AhhV3KXv6vJ8YbSxCk7r4J7k_VnQW5h5Vv-WuBzQ=w240-h480-rw" alt="Free Fire" class="game-image">
+    <div class="game-title">Free Fire</div>
+    <div class="game-version">الإصدار: 2025 | الحجم: 700MB</div>
+    <div class="desc">
+      <b>Free Fire</b> هي لعبة باتل رويال مشهورة عالميًا، تقدم تجربة قتال سريعة وشيقة مع رسوميات مذهلة. نافس لاعبين من حول العالم، طور مهاراتك، وكن آخر من يبقى على قيد الحياة!
+    </div>
+    <ul class="details-list">
+      <li>تعمل على جميع أجهزة الأندرويد</li>
+      <li>متوافقة مع الأجهزة المتوسطة والضعيفة</li>
+      <li>اللعبة أصلية وقانونية 100%</li>
+      <li>تحديثات مستمرة وأحداث جديدة</li>
+    </ul>
+    <a href="https://play.google.com/store/apps/details?id=com.dts.freefireth" class="download-btn" target="_blank" rel="noopener">تحميل من Google Play</a>
+    <a href="index.html" class="back-link">← رجوع إلى الصفحة الرئيسية</a>
+  </div>
+</body>
+</html>
