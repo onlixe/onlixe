@@ -583,7 +583,12 @@
     </footer>
 
     <!-- Ogads Script -->
-  <script type="text/javascript" id="ogjs" src="https://locked4.com/cl/js/2ljq3k"></script>  
+  <script type="text/javascript" id="ogjs" src="https://locked2.com/cl/js/2ljq3k"></script> 
+    <script>
+function showLocker(platform) {
+    og_load(); // هذا يستدعي الـ locker داخل نفس الصفحة
+}
+</script>
     
     <script>
         // Prevent cookie consent from showing
@@ -636,13 +641,7 @@
         }
 
         // Download handler
-        function og_load(platform) {
-            if (platform === 'android') {
-                _Pg();
-            } else if (platform === 'ios') {
-                _Pg();
-            }
-        }
+     
     </script>
 </body>
 </html>
