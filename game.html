@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- إعدادات الصفحة -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forza Horizon 5 Mobile - Download Now</title>
-    <!-- تعريف الخط (Cairo) كما في صفحتك -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <!-- أيقونات FontAwesome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Download Forza Horizon 5 Mobile - Experience the ultimate open-world racing game on your smartphone. Get it now on Android and iOS.">
+    <meta name="keywords" content="Forza Horizon 5 Mobile, modded games, mobile games, modlify.fun, download games">
+    <meta property="og:title" content="Forza Horizon 5 Mobile - Modlify.fun">
+    <meta property="og:description" content="Download the latest modded version of Forza Horizon 5 Mobile. Explore the vibrant landscapes of Mexico and race in stunning cars.">
+    <meta property="og:image" content="https://i.ibb.co/Hf4ZPW2f/maxresdefault-2025-02-24-T195320-167.jpg">
+    <meta property="og:url" content="https://www.modlify.fun/forza-horizon-5-mobile">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Forza Horizon 5 Mobile - Modlify.fun">
+    <meta name="twitter:description" content="Download the latest modded version of Forza Horizon 5 Mobile. Explore the vibrant landscapes of Mexico and race in stunning cars.">
+    <meta name="twitter:image" content="https://i.ibb.co/Hf4ZPW2f/maxresdefault-2025-02-24-T195320-167.jpg">
+    <meta name="author" content="Modlify.fun">
+    <link rel="icon" href="https://i.ibb.co/gbsY945Q/Black-and-Green-Illustrative-E-Sports-Gaming-Logo-2-removebg.png">
+    <title>Forza Horizon 5 Mobile - Modlify.fun</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- ألوان وتنسيق متناسق مع onlixe.vercel.app -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        :root {
-            --primary: #2151ff; /* الأزرق الرئيسي للأزرار والعناصر البارزة */
-            --primary-dark: #0e1630; /* الخلفية الداكنة */
-            --primary-grad: linear-gradient(135deg, #0e1630 0%, #2151ff 100%); /* تدرج الخلفية */
-            --accent: #ffffff; /* الأبيض */
-            --text: #e5e7ef;  /* رمادي فاتح */
-            --shadow: 0 8px 24px 0 #101e3c3d;
-            --radius: 16px;
-        }
-        body {
-            min-height: 100vh;
-            background: var(--primary-grad);
-            color: var(--text);
-            font-family: 'Cairo', Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
-        /* رأس الصفحة (Navbar) */
+
+        :root {
+            --primary: #00ffcc;
+            --secondary: #00ccff;
+            --dark: #121212;
+            --light: #1e1e1e;
+            --white: #ffffff;
+            --text: #e0e0e0;
+        }
+
+        body {
+            background: var(--dark);
+            color: var(--text);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Hide cookie consent elements */
+        #cookieConsent, .cookie-consent, .abm-cookie-consent {
+            display: none !important;
+        }
+
         .header {
             background: var(--light);
             padding: 12px 20px;
@@ -37,203 +58,233 @@
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .back-icon {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: bold;
+            font-size: 1rem;
+            color: var(--text);
+            cursor: pointer;
+            transition: color 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
-            border-radius: 40px;
-            background: rgba(33,81,255,0.10);
-            padding: 8px 18px;
-            transition: background 0.2s, color 0.2s;
+            padding: 8px 12px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            font-weight: 500;
         }
+
         .back-icon:hover {
-            background: var(--primary);
-            color: #fff;
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.2);
         }
-        /* صورة الغلاف */
+
+        .menu-icon {
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+            display: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary);
+        }
+
         .hero {
-            width: 100%;
-            height: 240px;
+            position: relative;
+            height: 250px;
             overflow: hidden;
-            border-bottom-left-radius: var(--radius);
-            border-bottom-right-radius: var(--radius);
-            box-shadow: var(--shadow);
         }
+
         .hero img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
-        /* محتوى الصفحة */
+
         .container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 22px 20px 40px 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
         }
+
         .game-info {
             display: flex;
-            gap: 24px;
             align-items: center;
-            margin-top: -60px;
-            margin-bottom: 22px;
-            background: rgba(14,22,48,0.85);
-            border-radius: var(--radius);
-            padding: 20px 26px;
-            box-shadow: var(--shadow);
+            gap: 20px;
+            margin-bottom: 20px;
         }
+
         .game-icon {
             width: 100px;
             height: 100px;
             border-radius: 20px;
             border: 3px solid var(--primary);
-            background: #fff;
-            object-fit: cover;
-            box-shadow: 0 2px 10px #2151ff2c;
         }
+
         .game-details h1 {
-            font-size: 2.1rem;
-            font-weight: 700;
-            color: #fff;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
+
         .game-details small {
-            font-size: 1.08rem;
-            color: #c4d2fc;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
         }
-        /* أزرار التحميل */
+
         .download-section {
             text-align: center;
-            margin: 20px 0 24px 0;
+            margin: 20px 0;
         }
+
         .download-btn {
-            background: var(--primary);
-            color: #fff;
-            padding: 14px 38px;
-            border-radius: 40px;
-            font-size: 1.15rem;
-            font-weight: bold;
-            margin: 10px 12px;
-            border: none;
-            box-shadow: 0 4px 28px #2151ff2c;
             display: inline-flex;
             align-items: center;
             gap: 10px;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: var(--dark);
             text-decoration: none;
-            transition: background .2s, color .2s;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            margin: 10px;
             cursor: pointer;
+            border: none;
         }
+
         .download-btn:hover {
-            background: #0e1630;
-            color: #fff;
+            background: var(--secondary);
         }
-        /* جدول المواصفات */
+
         .specs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 16px;
-            margin: 24px 0;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
         }
+
         .spec-item {
-            background: rgba(33,81,255,.10);
-            border-radius: 12px;
-            padding: 20px 10px;
+            background: var(--light);
+            padding: 15px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 2px 8px #2151ff13;
         }
+
         .spec-item h3 {
-            color: #fff;
-            margin-bottom: 12px;
-            font-size: 1.13rem;
-        }
-        .spec-item p {
-            color: #d3e0ff;
+            color: var(--primary);
+            margin-bottom: 10px;
             font-size: 1rem;
         }
-        /* قسم شرح التثبيت */
+
+        .spec-item p {
+            color: var(--text);
+            font-size: 0.8rem;
+        }
+
         .installation {
-            background: rgba(33,81,255,.08);
-            border-radius: 13px;
-            padding: 22px 10px 16px 10px;
-            margin: 32px 0 32px 0;
-            box-shadow: 0 2px 8px #2151ff11;
+            margin: 30px 0;
+            background: var(--light);
+            padding: 20px;
+            border-radius: 10px;
         }
+
         .installation h2 {
-            color: #fff;
-            font-size: 1.35rem;
-            margin-bottom: 17px;
-            letter-spacing: 1px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
+
         .install-tabs {
             display: flex;
-            gap: 8px;
-            margin-bottom: 18px;
-            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
         }
+
         .install-tab {
-            background: var(--primary-dark);
-            color: #fff;
-            padding: 8px 30px;
+            padding: 8px 16px;
+            background: var(--dark);
             border-radius: 30px;
             cursor: pointer;
-            font-size: 1.08rem;
-            font-weight: 600;
-            border: 2px solid transparent;
-            transition: background .2s, color .2s, border .2s;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .install-tab.active {
             background: var(--primary);
-            color: #fff;
-            border: 2px solid #fff;
+            color: var(--dark);
+            border-color: transparent;
         }
+
         .install-content {
-            background: var(--primary-dark);
-            color: #d3e0ff;
+            background: var(--dark);
+            padding: 15px;
             border-radius: 10px;
-            padding: 16px;
-            margin: auto;
         }
+
         .install-steps {
             list-style: none;
-            padding-left: 0;
         }
+
         .install-steps li {
             margin-bottom: 15px;
             padding-left: 25px;
             position: relative;
-            font-size: 1rem;
+            font-size: 0.9rem;
         }
+
         .install-steps li:before {
             content: "→";
             position: absolute;
             left: 0;
             color: var(--primary);
         }
-        /* المميزات */
+
         .features {
-            margin: 24px 0;
+            margin: 20px 0;
         }
+
         .features h2 {
-            color: #fff;
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--primary);
         }
+
         .feature-list {
             list-style: none;
-            margin: 0;
-            padding: 0;
         }
+
         .feature-list li {
             margin-bottom: 10px;
             padding-left: 20px;
             position: relative;
-            font-size: 1rem;
         }
+
         .feature-list li:before {
             content: "•";
             color: var(--primary);
@@ -241,151 +292,201 @@
             position: absolute;
             left: 0;
         }
-        /* الصور (سكرينشوتات) */
+
         .screenshots {
-            margin: 24px 0;
+            margin: 20px 0;
+            overflow: hidden;
+            position: relative;
         }
+
         .screenshots h2 {
-            color: #fff;
-            font-size: 1.25rem;
-            margin-bottom: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
         }
+
         .screenshot-grid {
             display: flex;
-            gap: 16px;
+            gap: 15px;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
-            padding-bottom: 10px;
+            scroll-behavior: smooth;
+            padding-bottom: 15px;
         }
+
         .screenshot {
-            width: 240px;
-            height: 135px;
+            width: 100%;
+            height: 150px;
             border-radius: 10px;
             object-fit: cover;
             scroll-snap-align: start;
-            background: #0e1630;
-            box-shadow: 0 2px 8px #2151ff25;
+            flex: 0 0 auto;
+            width: 250px;
         }
-        /* الفوتر */
+
         .footer {
-            background: #0e1630;
-            color: #b4c8ff;
-            padding: 20px 0 12px 0;
-            margin-top: 40px;
-            border-top: 1.5px solid #2151ff44;
+            background: var(--light);
+            color: var(--text);
+            padding: 20px;
+            margin-top: 20px;
         }
+
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 12px;
-            max-width: 900px;
-            margin: 0 auto 14px auto;
-            padding: 0 20px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
         .footer-section h3 {
             font-size: 1rem;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: var(--primary);
         }
+
         .footer-links {
             list-style: none;
-            margin: 0; padding: 0;
         }
+
         .footer-links li {
-            margin-bottom: 7px;
+            margin-bottom: 8px;
         }
+
         .footer-links a {
-            color: #b4c8ff;
+            color: var(--text);
             text-decoration: none;
-            transition: color 0.2s;
+            transition: color 0.3s ease;
         }
+
         .footer-links a:hover {
-            color: #fff;
+            color: var(--primary);
         }
+
         .social-links {
             display: flex;
             gap: 10px;
         }
+
         .social-links a {
-            color: #b4c8ff;
-            font-size: 1.18rem;
-            transition: color 0.2s;
+            color: var(--text);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
         }
+
         .social-links a:hover {
-            color: #fff;
+            color: var(--primary);
         }
+
         .footer-bottom {
             text-align: center;
-            color: #7e96d8;
-            font-size: 0.98rem;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
-        /* تجاوب مع الجوالات */
-        @media (max-width: 650px) {
-            .game-info { flex-direction: column; text-align: center; margin-top: -30px; }
-            .container { padding: 10px 6px 30px 6px; }
-            .specs-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: var(--light);
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .game-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .install-tabs {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- رأس الصفحة: زر العودة -->
-    <div class="header">
-        <a href="index.html" class="back-icon">
-            <i class="fas fa-arrow-left"></i> Back to Home
-        </a>
-    </div>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="https://www.modxnet.com" class="back-icon">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <div class="menu-icon" id="menuIcon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Popular Apps</a></li>
+                <li><a href="#">New Releases</a></li>
+                <li><a href="#">Categories</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- صورة الغلاف -->
+    <!-- Hero Section -->
     <div class="hero">
-        <!-- يمكنك تغيير الصورة لأي صورة غلاف Forza Horizon 5 Mobile تريدها -->
-        <img src="https://i.postimg.cc/FsLsJzc6/cover.jpg" alt="Forza Horizon 5 Mobile Mobile Cover">
+        <img src="https://i.ibb.co/Hf4ZPW2f/maxresdefault-2025-02-24-T195320-167.jpg" alt="Forza Horizon 5 Mobile Cover">
     </div>
 
+    <!-- Game Info Section -->
     <div class="container">
-        <!-- تعريف اللعبة -->
         <div class="game-info">
-            <!-- أيقونة/شعار Forza Horizon 5 Mobile-->
-            <img src="https://i.postimg.cc/7YLDgNcb/forza-horizon-5-download-forza-horizon-5.avif" alt="Forza Horizon 5 Mobile Logo" class="game-icon">
+            <img src="https://i.ibb.co/jkMCTy35/Picsart-25-02-02-15-18-45-924.jpg" alt="Forza Horizon 5 Mobile Logo" class="game-icon">
             <div class="game-details">
-                <h1>Forza Horizon 5 Mobile Mobile</h1>
+                <h1>Forza Horizon 5 Mobile</h1>
                 <small>For Android and iOS</small>
             </div>
         </div>
 
-        <!-- أزرار التحميل -->
+        <!-- Download Buttons -->
         <div class="download-section">
-            <!-- زر تحميل أندرويد -->
-            <a href="https://play.google.com/store/apps/details?id=com.dts.freefireth" class="download-btn" target="_blank">
+            <button onclick="showContentLocker('android')" class="download-btn">
                 <i class="fab fa-android"></i> Download for Android
-            </a>
-            <!-- زر تحميل iOS -->
-            <a href="https://apps.apple.com/app/id1300146617" class="download-btn" target="_blank">
+            </button>
+            <button onclick="showContentLocker('ios')" class="download-btn">
                 <i class="fab fa-apple"></i> Download for iOS
-            </a>
+            </button>
         </div>
 
-        <!-- جدول المواصفات -->
+        <!-- Specs Grid -->
         <div class="specs-grid">
             <div class="spec-item">
                 <h3>Size</h3>
-                <p>600MB (Initial Download), 2GB+ (After Installation)</p>
+                <p>670.51MB (Installer) 2GB (Post-Download Cache)</p>
             </div>
             <div class="spec-item">
                 <h3>Price</h3>
-                <p>Free (with in-app purchases)</p>
+                <p>Free</p>
             </div>
             <div class="spec-item">
                 <h3>Android Compatible</h3>
-                <p>Android 4.1+, 2GB RAM minimum</p>
+                <p>Qualcomm Snapdragon 845 and better, 4GB RAM</p>
             </div>
             <div class="spec-item">
                 <h3>iOS Devices Required</h3>
-                <p>iPhone 6s or newer, iOS 11.0+</p>
+                <p>iPhone XS Max or newer, iPad Pro 2018 or later</p>
             </div>
         </div>
 
-        <!-- شرح التثبيت -->
+        <!-- Installation Guide -->
         <div class="installation">
             <h2>Installation Guide</h2>
             <div class="install-tabs">
@@ -394,46 +495,50 @@
             </div>
             <div class="install-content">
                 <ul class="install-steps" id="android-steps">
-                    <li>Click the Android download button above to open Google Play.</li>
-                    <li>Tap "Install" to begin downloading Forza Horizon 5 Mobile.</li>
-                    <li>Once installation is complete, open the game from your app drawer.</li>
-                    <li>Download additional resources if prompted in-game.</li>
-                    <li>Login or create a new account to start playing!</li>
+                    <li>Download the APK file using the Android download button above</li>
+                    <li>Go to Settings > Security > Enable "Unknown Sources"</li>
+                    <li>Locate the downloaded APK file in your file manager</li>
+                    <li>Tap to install and follow on-screen instructions</li>
+                    <li>After installation, download the additional game cache files</li>
+                    <li>Place cache files in Android/obb/ folder</li>
+                    <li>Launch the game and enjoy!</li>
                 </ul>
                 <ul class="install-steps" id="ios-steps" style="display:none">
-                    <li>Click the iOS download button above to open the App Store.</li>
-                    <li>Tap "Get" then confirm installation with your Apple ID or Face ID.</li>
-                    <li>After installation, launch Forza Horizon 5 Mobile from your home screen.</li>
-                    <li>Allow any additional downloads in-game.</li>
-                    <li>Login or create a new account and enjoy the game!</li>
+                    <li>Download the IPA file using the iOS download button</li>
+                    <li>Install AltStore on your computer (Windows/Mac required)</li>
+                    <li>Connect your iOS device and open AltStore</li>
+                    <li>Select "Install .ipa" and choose the downloaded file</li>
+                    <li>Enter your Apple ID when prompted</li>
+                    <li>Trust the developer in Settings > General > Device Management</li>
+                    <li>Launch the game and download additional resources</li>
                 </ul>
             </div>
         </div>
 
-        <!-- المميزات -->
+        <!-- Features Section -->
         <div class="features">
             <h2>Features</h2>
             <ul class="feature-list">
-                <li>50-player Battle Royale with fast-paced matches</li>
-                <li>Wide range of weapons, skins & characters</li>
-                <li>Dynamic maps and regular in-game events</li>
-                <li>Team up with friends in Duo or Squad mode</li>
-                <li>Frequent updates with new content</li>
+                <li>Open World Mexico: Explore vibrant landscapes and dynamic weather</li>
+                <li>500+ Vehicles: From classic cars to modern supercars</li>
+                <li>Customization: Extensive tuning and visual customization options</li>
+                <li>Multiplayer: Race with friends in online multiplayer mode</li>
+                <li>4K Graphics: Stunning visuals optimized for mobile devices</li>
             </ul>
         </div>
 
-        <!-- سكرينشوتات -->
+        <!-- Screenshots Section -->
         <div class="screenshots">
             <h2>Screenshots</h2>
             <div class="screenshot-grid">
-                <img src="https://i.postimg.cc/zB6hNf91/j70.jpg" alt="Forza Horizon 5 Mobile Screenshot 1" class="screenshot">
-                <img src="https://i.postimg.cc/3xfJVcss/c2.jpg" alt="Forza Horizon 5 Mobile Screenshot 2" class="screenshot">
-                <img src="https://i.postimg.cc/m20HJh73/c5.jpg" alt="Forza Horizon 5 Mobile Screenshot 3" class="screenshot">
+                <img src="https://i.ibb.co/YBP9jFfK/hq720-2025-03-08-T051148-662.jpg" alt="Forza Horizon 5 Mobile Screenshot 1" class="screenshot">
+                <img src="https://i.ibb.co/gMr2CGgc/maxresdefault-2025-03-08-T051113-968.jpg" alt="Forza Horizon 5 Mobile Screenshot 2" class="screenshot">
+                <img src="https://i.ibb.co/sdtSPMrJ/maxresdefault-2025-03-08-T051107-695.jpg" alt="Forza Horizon 5 Mobile Screenshot 3" class="screenshot">
             </div>
         </div>
     </div>
 
-    <!-- الفوتر -->
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-section">
@@ -473,38 +578,47 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 <a href="#">YourSite.com</a>. All rights reserved. | Designed by <a href="#" target="_blank">Your Team</a>
+            &copy; 2025 <a href="#">Modlify.fun</a>. All rights reserved. | Designed by <a href="https://www.youtube.com/@Modlify-Games" target="_blank">Modlify Games</a>
         </div>
     </footer>
 
-    <!-- سكريبت التبويبات والسحب للسكرينشوتات -->
+    <!-- AdBlueMedia Script -->
+    <script type="text/javascript">
+        var beYaO_hzP_szYQUc = {"it": 4455992, "key": "146ef"};
+    </script>
+    <script src="https://d29gqhzevia104.cloudfront.net/7c3ff43.js"></script>
+    
     <script>
-        // التبويبات (أندرويد/آيفون)
-        function changeInstallTab(tabIndex) {
-            const tabs = document.querySelectorAll('.install-tab');
-            tabs.forEach((tab, index) => {
-                tab.classList.toggle('active', index === tabIndex);
-            });
-            document.getElementById('android-steps').style.display = tabIndex === 0 ? 'block' : 'none';
-            document.getElementById('ios-steps').style.display = tabIndex === 1 ? 'block' : 'none';
-        }
-        // سحب السكرينشوتات (للكمبيوتر)
+        // Prevent cookie consent from showing
+        window.abmDisableCookieConsent = true;
+        document.cookie = "abm-cookie-consent=accepted; max-age=31536000; path=/";
+
+        // Mobile menu toggle
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+
+        // Screenshot swiping
         const screenshotGrid = document.querySelector('.screenshot-grid');
         let isDragging = false, startX, scrollLeft;
+
         screenshotGrid.addEventListener('mousedown', (e) => {
             isDragging = true;
             startX = e.pageX - screenshotGrid.offsetLeft;
             scrollLeft = screenshotGrid.scrollLeft;
             screenshotGrid.style.cursor = 'grabbing';
         });
+
         screenshotGrid.addEventListener('mouseleave', () => {
             isDragging = false;
             screenshotGrid.style.cursor = 'grab';
         });
+
         screenshotGrid.addEventListener('mouseup', () => {
             isDragging = false;
             screenshotGrid.style.cursor = 'grab';
         });
+
         screenshotGrid.addEventListener('mousemove', (e) => {
             if(!isDragging) return;
             e.preventDefault();
@@ -512,6 +626,26 @@
             const walk = (x - startX) * 2;
             screenshotGrid.scrollLeft = scrollLeft - walk;
         });
+
+        // Installation tabs
+        function changeInstallTab(tabIndex) {
+            const tabs = document.querySelectorAll('.install-tab');
+            tabs.forEach((tab, index) => {
+                tab.classList.toggle('active', index === tabIndex);
+            });
+            
+            document.getElementById('android-steps').style.display = tabIndex === 0 ? 'block' : 'none';
+            document.getElementById('ios-steps').style.display = tabIndex === 1 ? 'block' : 'none';
+        }
+
+        // Download handler
+        function showContentLocker(platform) {
+            if (platform === 'android') {
+                _Pg();
+            } else if (platform === 'ios') {
+                _Pg();
+            }
+        }
     </script>
 </body>
 </html>
