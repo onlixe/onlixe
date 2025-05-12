@@ -2,77 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black of Daty Mobile</title>
+  <title>Minecraft</title>
   <style>
     body {
+      direction: ltr;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f4f4;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      box-shadow: 0 4px 16px #0001;
+      padding: 30px 25px;
+      border-radius: 12px;
       text-align: center;
     }
-
-    .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 50px 20px;
-      min-height: 100vh;
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
-
-    .download-btn {
-      background-color: #0070f3;
-      padding: 15px 30px;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
-    }
-
-    .screenshots {
-      margin-top: 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .screenshots img {
-      width: 90%;
-      max-width: 500px;
+    .game-img {
+      width: 260px;
+      max-width: 90%;
       border-radius: 10px;
-      border: 2px solid #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px #0002;
     }
-
-    @media (min-width: 768px) {
-      .screenshots {
-        flex-direction: row;
-        justify-content: center;
-      }
+    h1 {
+      margin: 10px 0 20px 0;
+      font-size: 2.2em;
+      color: #0a5a9c;
+    }
+    .desc {
+      font-size: 1.13em;
+      color: #444;
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #1abc9c;
+      color: #fff;
+      padding: 15px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.15em;
+      font-weight: bold;
+      transition: background 0.2s;
+      box-shadow: 0 2px 6px #0001;
+      margin-top: 10px;
+    }
+    .download-btn:hover {
+      background: #159d82;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: #0a5a9c;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.2s;
+    }
+    .back-link:hover {
+      color: #1abc9c;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Black of Daty Mobile</h1>
-    <p>Experience futuristic battle royale action in the palm of your hand. Join millions of players and dominate the battlefield!</p>
-    <a class="download-btn" href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank">Download on App Store</a>
-
-    <div class="screenshots">
-      <img src="screenshot1.jpeg" alt="Screenshot 1">
-      <img src="screenshot2.jpeg" alt="Screenshot 2">
+  <div class="container">
+    <a class="back-link" href="index.html">&larr; Back to Home</a>
+    <img class="game-img" src="https://i.postimg.cc/wv2PLSQY/baseball-9-300x300.png" alt="Minecraft">
+    <h1>Minecraft</h1>
+    <div class="desc">
+      Enjoy the thrill and adventure of <strong>Minecraft</strong>!  
+      Experience stunning graphics, various levels, and exciting challenges.  
+      Perfect for all ages, this game guarantees hours of fun and smooth controls for an immersive experience.  
+      Don’t miss out—download the game now and start your adventure!
     </div>
+    <a class="download-btn" href="YOUR-DOWNLOAD-LINK-HERE" download>Download Game</a>
   </div>
 </body>
 </html>
