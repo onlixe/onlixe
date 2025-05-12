@@ -13,7 +13,7 @@
     <style>
         :root {
             --primary: #2151ff; /* الأزرق الرئيسي للأزرار والعناصر البارزة */
-            --primary-dark: #ced4de; /* الخلفية الداكنة */
+            --primary-dark: #0e1630; /* الخلفية الداكنة */
             --primary-grad: linear-gradient(135deg, #0e1630 0%, #2151ff 100%); /* تدرج الخلفية */
             --accent: #ffffff; /* الأبيض */
             --text: #e5e7ef;  /* رمادي فاتح */
@@ -30,12 +30,12 @@
         }
         /* رأس الصفحة (Navbar) */
         .header {
-            background: rgba(14, 22, 48, 0.95);
-            box-shadow: var(--shadow);
-            padding: 12px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            background: var(--light);
+            padding: 12px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .back-icon {
             color: var(--accent);
