@@ -389,29 +389,40 @@ body {
   border-radius: 8px;
   margin-bottom: 12px;
 }
-@media (max-width: 500px) {
-  .games-list {
-    gap: 6px;
-    padding-left: 2vw;
-    padding-right: 2vw;
+@media (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 0 3vw;
   }
-  .games-list .game-card {
-    width: 95vw !important;
-    max-width: 340px;
-    min-width: 90vw;
-    padding: 7px 2px;
-    margin: 0 auto 7px auto;
-  }
-  .games-list .game-card img {
-    max-width: 88vw;
-    height: 80px;
+  .games-grid .game-card img {
+    width: 100%;
+    max-width: 130px;
+    height: auto;
+    min-width: 60px;
+    margin: 0 auto 10px auto;
+    display: block;
   }
 }
-.games-list .game-title {
-  font-size: 17px;
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: #2196f3;
+
+@media (max-width: 430px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 0 7vw;
+  }
+  .games-grid .game-card {
+    max-width: 97vw;
+    padding: 11px 2vw 8px 2vw;
+  }
+  .games-grid .game-card img {
+    width: 90%;
+    max-width: 130px;
+    height: auto;
+    min-width: 60px;
+    margin: 0 auto 10px auto;
+    display: block;
+  }
 }
 .download-btn {
   background: #2196f3;
