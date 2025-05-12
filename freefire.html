@@ -2,77 +2,156 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Black of Daty Mobile</title>
+  <title>Free Fire | Download</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download Free Fire for Android and enjoy one of the best battle royale games.">
+  <link rel="icon" href="https://play-lh.googleusercontent.com/SYwqQnVjE0zv1q8rV8AhhV3KXv6vJ8YbSxCk7r4J7k_VnQW5h5Vv-WuBzQ=w240-h480-rw">
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      text-align: center;
-    }
+:root {
+  --main-color: #21252b;
+  --card-bg: #23272e;
+  --accent: #ffb300;
+  --font-main: 'Segoe UI',Arial,sans-serif;
+  --radius: 13px;
+}
 
-    .overlay {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 50px 20px;
-      min-height: 100vh;
-    }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--main-color);
+  font-family: var(--font-main);
+  color: #fff;
+  min-height: 100vh;
+}
 
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color .2s;
+}
+a:hover {
+  color: #fff;
+}
 
-    p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
+.main-card {
+  background: var(--card-bg);
+  max-width: 390px;
+  margin: 42px auto 0 auto;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 32px #0005;
+  padding: 32px 26px 18px 26px;
+  position: relative;
+  text-align: center;
+}
 
-    .download-btn {
-      background-color: #0070f3;
-      padding: 15px 30px;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 18px;
-    }
+.game-icon {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  box-shadow: 0 4px 18px #0002;
+  border: 2px solid #383d47;
+}
 
-    .screenshots {
-      margin-top: 50px;
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      align-items: center;
-    }
+.game-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+}
 
-    .screenshots img {
-      width: 90%;
-      max-width: 500px;
-      border-radius: 10px;
-      border: 2px solid #fff;
-    }
+.game-version {
+  color: #ffb300;
+  font-size: 1.05rem;
+  margin-bottom: 17px;
+  letter-spacing: 0.5px;
+}
 
-    @media (min-width: 768px) {
-      .screenshots {
-        flex-direction: row;
-        justify-content: center;
-      }
-    }
+.desc {
+  color: #e5e5e5;
+  font-size: 1.1rem;
+  margin: 14px 0 20px 0;
+  line-height: 1.7;
+}
+
+.download-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #222;
+  padding: 15px 46px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+  box-shadow: 0 4px 18px #0002;
+  transition: background .18s;
+  margin-bottom: 18px;
+}
+.download-btn:hover {
+  background: #ffd35a;
+  color: #222;
+}
+
+.details-list {
+  text-align: left;
+  color: #b0b0b0;
+  margin: 18px auto 10px auto;
+  padding: 0 6%;
+  font-size: 1rem;
+}
+.details-list li {
+  margin-bottom: 6px;
+  list-style: disc inside;
+}
+
+.socials {
+  margin: 15px 0 4px 0;
+}
+.socials a {
+  margin: 0 9px;
+  display: inline-block;
+  opacity: 0.75;
+  transition: opacity .2s;
+}
+.socials a:hover {
+  opacity: 1;
+}
+
+.back-link {
+  display: block;
+  margin: 20px auto 0 auto;
+  color: #b0b0b0;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color .2s;
+}
+.back-link:hover { color: #fff; }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <h1>Black of Daty Mobile</h1>
-    <p>Experience futuristic battle royale action in the palm of your hand. Join millions of players and dominate the battlefield!</p>
-    <a class="download-btn" href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank">Download on App Store</a>
-
-    <div class="screenshots">
-      <img src="https://i.postimg.cc/3NVBfZsZ/Madden-Featured.jpg" alt="Screenshot 1">
-      <img src="https://i.postimg.cc/3NVBfZsZ/Madden-Featured.jpg" alt="Screenshot 2">
+  <div class="main-card">
+    <img class="game-icon" src="https://play-lh.googleusercontent.com/SYwqQnVjE0zv1q8rV8AhhV3KXv6vJ8YbSxCk7r4J7k_VnQW5h5Vv-WuBzQ=w240-h480-rw" alt="Free Fire Icon">
+    <div class="game-title">Free Fire</div>
+    <div class="game-version">Version: 2025.1 &nbsp; | &nbsp; Size: 700MB</div>
+    <div class="desc">
+      Free Fire is a world-famous battle royale game where players fight for survival on a remote island. Jump in, find weapons, and be the last one standing! Enjoy fast-paced matches, regular updates, and a global community of millions.
     </div>
+    <ul class="details-list">
+      <li>Official and legal version</li>
+      <li>Works on most Android devices</li>
+      <li>Frequent updates & events</li>
+      <li>Global multiplayer support</li>
+    </ul>
+    <a href="https://play.google.com/store/apps/details?id=com.dts.freefireth" class="download-btn" target="_blank" rel="noopener">Download from Google Play</a>
+    <div class="socials">
+      <a href="https://www.facebook.com/freefireEN/" target="_blank" title="Facebook"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png"></a>
+      <a href="https://twitter.com/freefireEN" target="_blank" title="Twitter"><img src="https://cdn-icons-png.flaticon.com/24/733/733579.png"></a>
+      <a href="https://www.youtube.com/@FreeFireOfficial" target="_blank" title="YouTube"><img src="https://cdn-icons-png.flaticon.com/24/1384/1384060.png"></a>
+      <!-- يمكنك إضافة قنوات أخرى بنفس الشكل -->
+    </div>
+    <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 </body>
 </html>
