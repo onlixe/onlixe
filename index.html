@@ -759,7 +759,7 @@ footer a:hover {
     <span>Onlixe Games</span>
   </div>
   <form class="search-bar" onsubmit="searchGames(event)">
-    <input type="text" placeholder="Search games..." id="gameSearchInput" autocomplete="off">
+    <input type="text" placeholder="Search games..." id="gameSearchInput" autocomplete="off"  oninput="filterGames(false)">
     <button type="submit" title="Search">🔍</button>
   </form>
   <button class="burger" onclick="toggleMenu(event)">&#9776;</button>
@@ -798,7 +798,7 @@ footer a:hover {
 
 <!-- HERO -->
 <section class="hero-section">
-  <h1>Mod GAMES for EVERYONE</h1>
+  <h1>Mod Games for Everyone</h1>
   <p>Access the best Mod GAMES with high speed, security and a beautiful experience. No limits, no ads!</p>
   <a class="main-cta" href="#" id="exploreGamesLink">Explore Games</a>
   <img class="hero-img" src="https://i.postimg.cc/23NV8Ppk/logo.webp" alt="Hero Banner">
@@ -811,7 +811,7 @@ footer a:hover {
     <div class="game-card">
       <a href="freefire.html">
       <img src="https://i.postimg.cc/DfSNk2Fm/Black-and-Yellow-Minimalist-Player-Gaming-Logo.avif" alt="BeamNG.drive Mobile">
-      <h3>CALL OF DATY MOBILE Mod</h3>
+      <h3>Call Of Daty Mobile Mod</h3>
       <div class="version">v0.32.0.0</div>
       <div class="stars">★★★★★ 4.6</div>
       </a>
@@ -975,5 +975,44 @@ function searchGames(e) {
   }
 }
 </script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('gameSearchInput');
+  const cards = document.querySelectorAll('.game-card');
+
+  // فلترة مباشرة أثناء الكتابة بدون إظهار النافذة المنبثقة
+  input.addEventListener('input', () => filterGames(false));
+
+  // عند الضغط على زر "بحث" يتم إظهار النافذة إن كانت هناك نتائج داخلها
+  window.searchGames = function (event) {
+    event.preventDefault();
+    filterGames(true);
+  };
+
+  function filterGames(showModal) {
+    const value = input.value.toLowerCase();
+
+    cards.forEach(card => {
+      const titleElement = card.querySelector('.game-title, h3');
+      if (!titleElement) return;
+
+      const title = titleElement.textContent.toLowerCase();
+      card.style.display = title.includes(value) ? 'block' : 'none';
+    });
+
+    if (showModal) {
+      const foundInModal = [...cards].some(card =>
+        card.closest('#gamesModal') && card.style.display === 'block'
+      );
+
+      if (foundInModal) {
+        document.getElementById('gamesModal').style.display = 'block';
+      }
+    }
+  }
+});
+</script>
+  
 </body>
 </html>
